@@ -17,9 +17,7 @@ export const primaryTheme = {
   },
 
   fonts: {
-    default: "'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-    serif:
-      "'PT Serif', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif",
+    default: "'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   },
 };
 

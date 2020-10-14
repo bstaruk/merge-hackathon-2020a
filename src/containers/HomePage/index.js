@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import Button from '@material-ui/core/Button';
 
 import { A } from 'components/Link';
 
@@ -40,6 +41,12 @@ const HomePage = () => (
       The <code>build</code> command will compile production-ready (linted,
       minified &amp; optimized) assets that can be deployed to a web server in
       seconds.
+    </p>
+
+    <p>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
     </p>
   </>
 );

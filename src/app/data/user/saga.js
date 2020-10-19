@@ -67,8 +67,7 @@ export function* loginSaga({ payload }) {
 
   yield put(
     actions.loginSuccess({
-      username: 'test123',
-      email: 'test@user.com',
+      email: payload.email,
     }),
   );
 }

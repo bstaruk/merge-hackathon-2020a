@@ -4,7 +4,7 @@ export const initialState = {
   user: null,
   authenticated: false,
   loading: false,
-  error: null,
+  errors: [],
 };
 
 const userSlice = createSlice({
@@ -15,7 +15,7 @@ const userSlice = createSlice({
       state.user = null;
       state.authenticated = false;
       state.loading = true;
-      state.error = null;
+      state.errors = [];
     },
     loginSuccess(state, action) {
       state.user = action.payload;
@@ -23,8 +23,8 @@ const userSlice = createSlice({
       state.loading = false;
     },
     loginError(state, action) {
-      state.error = action.payload;
       state.loading = false;
+      state.errors = action.payload;
     },
   },
 });

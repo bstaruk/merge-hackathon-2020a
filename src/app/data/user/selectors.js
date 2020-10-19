@@ -20,7 +20,7 @@ export const selectUserAuthenticated = createSelector(
   githubRepoFormState => githubRepoFormState.authenticated,
 );
 
-export const selectUserError = createSelector(
+export const selectUserErrors = createSelector(
   [selectDomain],
-  githubRepoFormState => githubRepoFormState.error,
+  githubRepoFormState => githubRepoFormState.errors,
 );

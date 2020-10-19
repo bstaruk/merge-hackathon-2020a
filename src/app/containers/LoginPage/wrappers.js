@@ -35,10 +35,6 @@ export const FormWrapper = styled.form`
 export const FormFieldWrapper = styled.div`
   width: 100%;
   margin-bottom: 1.5rem;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 `;
 
 export const FormSubmitWrapper = styled.div`

@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Button from '@material-ui/core/Button';
 
 import { H1 } from 'app/components/Type';
 
-import { selectUserAuthenticated } from 'app/data/user/selectors';
+import {
+  selectUserAuthenticated,
+  selectUserErrors,
+} from 'app/data/user/selectors';
+import { actions as userActions } from 'app/data/user/slice';
 
 import {
   PageWrapper,
@@ -19,11 +26,13 @@ import {
 } from './wrappers';
 
 export function LoginPage() {
-  const [username, setUsername] = useState('');
+  const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const userAuthenticated = useSelector(selectUserAuthenticated);
+  const userErrors = useSelector(selectUserErrors);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (userAuthenticated) {
@@ -42,12 +51,22 @@ export function LoginPage() {
   const onSubmit = e => {
     e.preventDefault();
     const payload = {
-      username,
+      email,
       password,
     };
 
     console.log('onSubmit', payload); // eslint-disable-line
+    dispatch(userActions.login(payload));
   };
+
+  const emailError =
+    userErrors.filter(e => e.field === 'email').length > 0
+      ? userErrors.filter(e => e.field === 'email')[0]
+      : null;
+  const passwordError =
+    userErrors.filter(e => e.field === 'password').length > 0
+      ? userErrors.filter(e => e.field === 'password')[0]
+      : null;
 
   return (
     <>
@@ -66,25 +85,44 @@ export function LoginPage() {
           </HeaderWrapper>
 
           <FormFieldWrapper>
-            <TextField
-              id="login-username"
-              label="Email Address"
-              variant="outlined"
-              onChange={onUsernameChange}
-              value={username}
-              fullWidth
-            />
+            <FormControl variant="outlined" fullWidth error={!!emailError}>
+              <InputLabel htmlFor="email">Email Address</InputLabel>
+              <OutlinedInput
+                id="email"
+                label="Email Address"
+                onChange={onUsernameChange}
+                value={email}
+                aria-describedby={
+                  emailError ? 'component-error-text' : undefined
+                }
+              />
+              {emailError && (
+                <FormHelperText id="component-error-text">
+                  {emailError.message}
+                </FormHelperText>
+              )}
+            </FormControl>
           </FormFieldWrapper>
+
           <FormFieldWrapper>
-            <TextField
-              id="login-password"
-              label="Password"
-              variant="outlined"
-              onChange={onPasswordChange}
-              value={password}
-              type="password"
-              fullWidth
-            />
+            <FormControl variant="outlined" fullWidth error={!!passwordError}>
+              <InputLabel htmlFor="password">Password</InputLabel>
+              <OutlinedInput
+                id="password"
+                label="Password"
+                type="password"
+                onChange={onPasswordChange}
+                value={password}
+                aria-describedby={
+                  passwordError ? 'component-error-text' : undefined
+                }
+              />
+              {passwordError && (
+                <FormHelperText id="component-error-text">
+                  {passwordError.message}
+                </FormHelperText>
+              )}
+            </FormControl>
           </FormFieldWrapper>
 
           <FormSubmitWrapper>

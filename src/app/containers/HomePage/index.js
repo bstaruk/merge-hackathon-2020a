@@ -8,9 +8,12 @@ export function HomePage() {
     <>
       <Helmet>
         <title>Home Page</title>
-        <meta name="description" content="A Boilerplate application homepage" />
+        <meta
+          name="description"
+          content="MERGE Hackathon (October 2020) application homepage"
+        />
       </Helmet>
-      <div>HomePage container</div>
+      <div>Home Page</div>
       <div>
         <Button
           variant="contained"

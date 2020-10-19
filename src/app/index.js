@@ -19,10 +19,13 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
+        titleTemplate="%s - MERGE Hackathon"
+        defaultTitle="MERGE Hackathon"
       >
-        <meta name="description" content="A React Boilerplate application" />
+        <meta
+          name="description"
+          content="MERGE Hackathon (October 2020) application"
+        />
       </Helmet>
 
       <Switch>

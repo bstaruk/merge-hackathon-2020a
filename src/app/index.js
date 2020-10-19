@@ -9,11 +9,13 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle } from 'styles/global-styles';
+import primaryTheme from 'styles/theme/primary';
 
-import { HomePage } from './containers/HomePage/Loadable';
-import { NotFoundPage } from './components/NotFoundPage/Loadable';
+import { HomePage } from 'app/containers/HomePage/Loadable';
+import { NotFoundPage } from 'app/components/NotFoundPage/Loadable';
 
 export function App() {
   return (
@@ -28,11 +30,13 @@ export function App() {
         />
       </Helmet>
 
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
+      <ThemeProvider theme={primaryTheme}>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <GlobalStyle />
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

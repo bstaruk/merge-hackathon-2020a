@@ -1,7 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
+
+import { H1 } from 'app/components/Type';
 
 export function HomePage() {
   return (
@@ -13,7 +16,7 @@ export function HomePage() {
           content="MERGE Hackathon (October 2020) application homepage"
         />
       </Helmet>
-      <div>Home Page</div>
+      <H1>Home Page</H1>
       <div>
         <Button
           variant="contained"

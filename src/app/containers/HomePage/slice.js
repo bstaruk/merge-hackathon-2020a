@@ -1,7 +1,7 @@
 import { createSlice } from 'utils/@reduxjs/toolkit';
 
 export const initialState = {
-  prices: null,
+  thing: null,
   loading: false,
   error: null,
 };
@@ -10,16 +10,16 @@ const homePageSlice = createSlice({
   name: 'homePage',
   initialState,
   reducers: {
-    loadPrices(state, action) {
-      state.prices = null;
+    loadThing(state, action) {
       state.loading = true;
       state.error = null;
     },
-    pricesLoaded(state, action) {
-      state.prices = action.payload;
+    loadThingSuccess(state, action) {
+      state.thing = action.payload;
       state.loading = false;
     },
-    pricesError(state, action) {
+    loadThingError(state, action) {
+      state.thing = null;
       state.error = action.payload;
       state.loading = false;
     },

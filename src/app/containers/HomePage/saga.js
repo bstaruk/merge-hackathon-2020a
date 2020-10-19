@@ -1,11 +1,11 @@
 import { put, takeLatest, delay } from 'redux-saga/effects';
 import { actions } from './slice';
 
-export function* getPrice() {
+export function* getThing() {
   yield delay(500);
-  yield put(actions.pricesLoaded('success'));
+  yield put(actions.loadThingSuccess('success'));
 }
 
 export function* homePageSaga() {
-  yield takeLatest(actions.loadPrices.type, getPrice);
+  yield takeLatest(actions.loadThing.type, getThing);
 }

@@ -15,7 +15,7 @@ export const selectError = createSelector(
   githubRepoFormState => githubRepoFormState.error,
 );
 
-export const selectPrices = createSelector(
+export const selectThing = createSelector(
   [selectDomain],
-  githubRepoFormState => githubRepoFormState.prices,
+  githubRepoFormState => githubRepoFormState.thing,
 );

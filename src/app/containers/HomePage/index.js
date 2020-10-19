@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import { H1 } from 'app/components/Type';
+import { HeaderWrapper, TitleWrapper } from './wrappers';
 
 export function HomePage() {
   return (
@@ -16,16 +17,21 @@ export function HomePage() {
           content="MERGE Hackathon (October 2020) application homepage"
         />
       </Helmet>
-      <H1>Home Page</H1>
-      <div>
-        <Button
-          variant="contained"
-          color="secondary"
-          startIcon={<DeleteIcon />}
-        >
-          Delete
-        </Button>
-      </div>
+
+      <HeaderWrapper>
+        <TitleWrapper>
+          <H1>Home Page</H1>
+        </TitleWrapper>
+        <div>
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<DeleteIcon />}
+          >
+            Delete
+          </Button>
+        </div>
+      </HeaderWrapper>
     </>
   );
 }

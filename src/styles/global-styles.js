@@ -8,7 +8,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: ${props => props.theme.fonts.roboto};
+    font-size: 1rem;
+    line-height: 1.4;
+    color: ${props => props.theme.color.mineShaft};
+    transition: all 200ms ease;
   }
 
   #root {

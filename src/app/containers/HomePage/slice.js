@@ -11,6 +11,7 @@ const homePageSlice = createSlice({
   initialState,
   reducers: {
     loadThing(state, action) {
+      state.thing = null;
       state.loading = true;
       state.error = null;
     },
@@ -19,7 +20,6 @@ const homePageSlice = createSlice({
       state.loading = false;
     },
     loadThingError(state, action) {
-      state.thing = null;
       state.error = action.payload;
       state.loading = false;
     },

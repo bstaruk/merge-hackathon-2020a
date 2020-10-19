@@ -49,7 +49,7 @@ export function HomePage() {
             startIcon={<DeleteIcon />}
             onClick={onButtonClick}
           >
-            Delete
+            Do a thing
           </Button>
         </div>
       </HeaderWrapper>

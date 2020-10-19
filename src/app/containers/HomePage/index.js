@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import { useHistory } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import { H1 } from 'app/components/Type';
 
+import { selectUserAuthenticated } from 'app/data/user/selectors';
 import { HeaderWrapper, TitleWrapper } from './wrappers';
 import { selectThing, selectThingLoading } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
@@ -19,7 +21,15 @@ export function HomePage() {
 
   const thing = useSelector(selectThing);
   const thingLoading = useSelector(selectThingLoading);
+  const userAuthenticated = useSelector(selectUserAuthenticated);
+  const history = useHistory();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!userAuthenticated) {
+      history.replace('/login');
+    }
+  }, [history, userAuthenticated]);
 
   useEffect(() => {
     dispatch(actions.loadThing());

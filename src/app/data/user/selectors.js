@@ -15,6 +15,11 @@ export const selectUserLoading = createSelector(
   githubRepoFormState => githubRepoFormState.loading,
 );
 
+export const selectUserAuthenticated = createSelector(
+  [selectDomain],
+  githubRepoFormState => githubRepoFormState.authenticated,
+);
+
 export const selectUserError = createSelector(
   [selectDomain],
   githubRepoFormState => githubRepoFormState.error,

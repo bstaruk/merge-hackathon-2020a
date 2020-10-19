@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -19,6 +19,9 @@ import {
 } from './wrappers';
 
 export function LoginPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const history = useHistory();
 
@@ -27,6 +30,24 @@ export function LoginPage() {
       history.replace('/');
     }
   }, [history, userAuthenticated]);
+
+  const onUsernameChange = e => {
+    setUsername(e.target.value);
+  };
+
+  const onPasswordChange = e => {
+    setPassword(e.target.value);
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    const payload = {
+      username,
+      password,
+    };
+
+    console.log('onSubmit', payload); // eslint-disable-line
+  };
 
   return (
     <>
@@ -39,16 +60,18 @@ export function LoginPage() {
       </Helmet>
 
       <PageWrapper>
-        <FormWrapper>
+        <FormWrapper onSubmit={onSubmit}>
           <HeaderWrapper>
             <H1>Login</H1>
           </HeaderWrapper>
 
           <FormFieldWrapper>
             <TextField
-              id="login-email"
+              id="login-username"
               label="Email Address"
               variant="outlined"
+              onChange={onUsernameChange}
+              value={username}
               fullWidth
             />
           </FormFieldWrapper>
@@ -57,13 +80,20 @@ export function LoginPage() {
               id="login-password"
               label="Password"
               variant="outlined"
+              onChange={onPasswordChange}
+              value={password}
               type="password"
               fullWidth
             />
           </FormFieldWrapper>
 
           <FormSubmitWrapper>
-            <Button variant="contained" color="primary" size="large">
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              type="submit"
+            >
               Login
             </Button>
           </FormSubmitWrapper>

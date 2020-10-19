@@ -1,8 +1,21 @@
 import styled from 'styled-components/macro';
 
+export const PageWrapper = styled.main`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const HeaderWrapper = styled.header`
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+
+  & > * {
+    margin: 0;
+  }
 `;
 
 export const FormWrapper = styled.form`
@@ -30,7 +43,7 @@ export const FormFieldWrapper = styled.div`
 
 export const FormSubmitWrapper = styled.div`
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
   width: 100%;
 `;

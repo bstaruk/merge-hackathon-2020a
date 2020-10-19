@@ -11,6 +11,7 @@ import { H1 } from 'app/components/Type';
 import { selectUserAuthenticated } from 'app/data/user/selectors';
 
 import {
+  PageWrapper,
   HeaderWrapper,
   FormWrapper,
   FormFieldWrapper,
@@ -37,35 +38,37 @@ export function LoginPage() {
         />
       </Helmet>
 
-      <HeaderWrapper>
-        <H1>Login</H1>
-      </HeaderWrapper>
+      <PageWrapper>
+        <FormWrapper>
+          <HeaderWrapper>
+            <H1>Login</H1>
+          </HeaderWrapper>
 
-      <FormWrapper>
-        <FormFieldWrapper>
-          <TextField
-            id="login-email"
-            label="Email Address"
-            variant="outlined"
-            fullWidth
-          />
-        </FormFieldWrapper>
-        <FormFieldWrapper>
-          <TextField
-            id="login-password"
-            label="Password"
-            variant="outlined"
-            type="password"
-            fullWidth
-          />
-        </FormFieldWrapper>
+          <FormFieldWrapper>
+            <TextField
+              id="login-email"
+              label="Email Address"
+              variant="outlined"
+              fullWidth
+            />
+          </FormFieldWrapper>
+          <FormFieldWrapper>
+            <TextField
+              id="login-password"
+              label="Password"
+              variant="outlined"
+              type="password"
+              fullWidth
+            />
+          </FormFieldWrapper>
 
-        <FormSubmitWrapper>
-          <Button variant="contained" color="primary" size="large">
-            Login
-          </Button>
-        </FormSubmitWrapper>
-      </FormWrapper>
+          <FormSubmitWrapper>
+            <Button variant="contained" color="primary" size="large">
+              Login
+            </Button>
+          </FormSubmitWrapper>
+        </FormWrapper>
+      </PageWrapper>
     </>
   );
 }

@@ -5,17 +5,17 @@ import { initialState } from './slice';
 // First select the relevant part from the state
 const selectDomain = state => state.homePage || initialState;
 
-export const selectLoading = createSelector(
+export const selectThing = createSelector(
+  [selectDomain],
+  githubRepoFormState => githubRepoFormState.thing,
+);
+
+export const selectThingLoading = createSelector(
   [selectDomain],
   githubRepoFormState => githubRepoFormState.loading,
 );
 
-export const selectError = createSelector(
+export const selectThingError = createSelector(
   [selectDomain],
   githubRepoFormState => githubRepoFormState.error,
-);
-
-export const selectThing = createSelector(
-  [selectDomain],
-  githubRepoFormState => githubRepoFormState.thing,
 );

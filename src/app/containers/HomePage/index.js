@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { H1 } from 'app/components/Type';
 
 import { HeaderWrapper, TitleWrapper } from './wrappers';
-import { selectThing } from './selectors';
+import { selectThing, selectThingLoading } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 import { homePageSaga } from './saga';
 
@@ -18,6 +18,7 @@ export function HomePage() {
   useInjectSaga({ key: sliceKey, saga: homePageSaga });
 
   const thing = useSelector(selectThing);
+  const thingLoading = useSelector(selectThingLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,8 +49,9 @@ export function HomePage() {
             color="secondary"
             startIcon={<DeleteIcon />}
             onClick={onButtonClick}
+            disabled={thingLoading}
           >
-            Do a thing
+            {thingLoading ? 'Loading' : 'Do a thing'}
           </Button>
         </div>
       </HeaderWrapper>

@@ -1,122 +1,142 @@
-# starbase-react
+<img width="914" alt="React Boilerplate Meets CRA" src="https://user-images.githubusercontent.com/3495307/80274591-2d5daa00-86e4-11ea-8fba-404f1cdba87e.png" align="center">
+<br />
 
-[![npm version](https://badge.fury.io/js/starbase-react.svg)](https://badge.fury.io/js/starbase-react)
-[![dependencies status](https://david-dm.org/bstaruk/starbase-react/status.svg)](https://david-dm.org/bstaruk/starbase-react)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase-react.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbstaruk%2Fstarbase-react?ref=badge_shield)
+<div align="center" >Crafted for <strong>highly scalable</strong> & <strong>performant</strong> and <strong>easily maintainable</strong> React.js applications <br /> 
+with a focus on  
+<strong>best DX</strong> and <strong>best practices</strong>.
+</div>
 
-starbase-react is an offline-first React 16, redux, redux-saga & styled-components boilerplate. Get up and running in minutes using some of the most powerful front-end tools available in 2020:
+<br />
 
-* [webpack 4](https://github.cominternals/webpack) & [webpack-dev-server](https://github.cominternals/webpack-dev-server)
-* [React 16](https://facebook.github.io/react/) w/ [styled-components](https://github.com/styled-components/styled-components), [react-redux](https://github.com/reduxjs/react-redux) & [redux-saga](https://github.com/redux-saga/redux-saga/)
-* [react-testing-library](https://github.com/testing-library/react-testing-library) & [jest](https://github.com/facebook/jest)
-* [Babel 7](https://github.com/babel/babel) w/ [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
-* ...and more!
+<div align="center">
+  <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/actions?query=workflow%3Abuild">
+    <img src="https://github.com/react-boilerplate/react-boilerplate-cra-template/workflows/build/badge.svg" alt="Build Status" />
+  </a>
+  <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/actions?query=workflow%3Atests">
+    <img src="https://github.com/react-boilerplate/react-boilerplate-cra-template/workflows/test/badge.svg" alt="Tests Status" />
+  </a>
+  <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/actions?query=workflow%release">
+    <img src="https://github.com/react-boilerplate/react-boilerplate-cra-template/workflows/release/badge.svg" alt="Release Status" />
+  </a>
+</div>
 
-starbase-react is a spin on [starbase](https://github.com/bstaruk/starbase), and intended to be relatively small in scope so that it may be easily extended and customized, or used as a learning tool for folks who are trying to become familiar with React 16, redux, redux-saga, style-components, webpack 4 and/or ES6.
+<div align="center">
+  <a href="https://coveralls.io/github/react-boilerplate/react-boilerplate-cra-template">
+    <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate-cra-template/badge.svg?branch=master" alt="Coverage" />
+  </a>
+  <a href="https://opencollective.com/react-boilerplate">
+    <img src="https://opencollective.com/react-boilerplate/backers/badge.svg" alt="Backers" />
+  </a>
+  <a href="https://opencollective.com/react-boilerplate/">
+    <img src="https://opencollective.com/react-boilerplate/sponsors/badge.svg" alt="Sponsors" />
+  </a>
+</div>
 
-## license
+<br />
 
-starbase-react is open source and free software, so you may to do whatever you wish with it -- commercially or personally. You can buy me a beer next time you're in Boston, star the project and tell a friend, or you can erase all signs of origin and tell your coworkers that you made it yourself. It's all good!
+---
 
-## getting started
+The official [Create React App](https://github.com/facebook/create-react-app) template of [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+![](https://img.shields.io/github/stars/react-boilerplate/react-boilerplate?style=flat)
 
-After completing the steps below, you will be ready to begin using starbase-react:
+Start your `create-react-app` projects in seconds with the best, industry-standard tools and practices made ready for you.
 
-1. Install [Node.js](https://nodejs.org) (latest LTS recommended)
-2. (Optional) Install [Yarn](https://yarnpkg.com)
-3. Clone starbase-react into your project root directory
-4. Install dependencies by running `npm install` in your project root directory (or `yarn` if you performed Step 2)
+**📚Documentation:** [Gitbook](https://cansahin.gitbook.io/react-boilerplate-cra-template/)
 
-## building, watching & developing
+**🎨 Check the example app:** [Boilerplate Example Application](https://react-boilerplate.github.io/react-boilerplate-cra-template/)
 
-### local development
+**🚑 Collection of `'HOW TO'`s:** [Examples & Tutorials for common patterns](https://github.com/react-boilerplate/cra-template-examples)
 
-starbase-react uses [webpack-dev-server](https://github.cominternals/webpack-dev-server) to serve up your project at [http://localhost:3000](http://localhost:3000) for streamlined and convenient development.
+**📦 Package:** [npm](https://www.npmjs.com/package/cra-template-rb)
 
-After running `npm run start` in the project root, your `/src` code will be served at the url above and watched for changes. As you modify code in `/src`, the project will be recompiled and your browser will refresh to show the latest changes.
+![version](https://img.shields.io/npm/v/cra-template-rb)
+![version](https://img.shields.io/npm/dm/cra-template-rb)
 
+---
+
+## Install & Start
+
+Create React App with the template
+
+```shell
+npx create-react-app --template cra-template-rb my-app
 ```
-cd /path/to/starbase-react
-npm run start
+
+Start and check our example app, if you want
+
+```shell
+cd my-app
+npm start
 ```
 
-### building for production
-Use `npm run build` in your project root to run a production build.
+Remove the example app to start your project!
 
-Production builds compile & minify your assets into `/dist` for distribution and/or integration into whatever codebase you'll be using these assets in.
-
-```
-cd /path/to/starbase-react
-npm run build
+```shell
+npm run cleanAndSetup
 ```
 
-## features you may want to remove
+## Features
 
-### asset hashing
-The assets generated by starbase-react are [hashed](https://webpack.js.org/guides/caching/) (strings injected into the filenames) as a cache-busting mechanism. JS and CSS assets will receive a new filename for each production build, but other assets (fonts, images, etc) will only be updated when they are modified.
+<dl>
 
-This feature ships with webpack (and the loaders we use), so removing it is pretty straightforward. Simply open up the webpack config files and remove the hashes from the filenames, which should look something like this: `.[hash:8]`.
+  <dt>Predictable state management</dt>
+  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
 
-Removing hashing for production builds is not recommended.
+  <dt>Instant feedback</dt>
+  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
 
-### build-time cleanup
+  <dt>Next generation CSS</dt>
+  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
 
-starbase-react is setup to clear all contents of `/dist` (where compiled assets are piped into) during each `npm run build`. If you'd like to remove this part of the build process, perform the following steps:
+  <dt>Industry-standard routing</dt>
+  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
 
-1. remove `CleanWebpackPlugin` from the plugins array in `/internalsinternals/webpack.config.prod.js`
-2. remove `CleanWebpackPlugin` as a requirement at the top of `/internalsinternals/webpack.config.prod.js`
-3. remove the `CleanWebpackPlugin` dependency from `/package.json`
+  <dt>Industry-standard i18n internationalization support</dt>
+  <dd>Scalable apps need to support multiple languages, easily add and support multiple languages.</dd>
 
-Removing the cleanup process means that deleted assets in `/src` will not be deleted in `/dist` until you manually do so. I recommend keeping the cleanup process intact unless you have a specific reason not to, such as having un-managed assets in `/dist`.
+  <dt>Typescript</dt>
+  <dd>Typescript is the key to scalability. Build self-documented code, easy-to-debug code and create maintainable large applications and codebases with a highly productive development experience.</dd>
 
-## features you may want to customize
+  <dt>Quick scaffolding</dt>
+  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
 
-### javascript & css linting
+  <dt>Static code analysis</dt>
+  <dd>Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.</dd>
 
-starbase-react uses [ESLint](http://eslint.org/) for Javascript (ES6) linting and [stylelint](https://github.com/stylelint/stylelint) for CSS linting. The configs (`/.eslintrc.js` and `/.stylelintrc.js` respectively) included out of the box contain some basic common rules. Modify them to your liking to encourage consistent code throughout your project.
+  <dt>SEO</dt>
+  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
+</dl>
 
-#### airbnb eslint config
+But wait... there's more!
 
-starbase-react enforces the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with ESLint via [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). These rules are basically the industry standard in 2017 so I'd recommend adhering to them, but you can override individual rules via the project `/.eslintrc.js` file. I've included a couple basic overrides (in `/.eslintrc.js`) to demonstrate usage.
+- _The best test setup:_ Automatically guarantee code quality and non-breaking
+  changes. (Seen a react app with 100% test coverage before?)
+- _The fastest fonts:_ Say goodbye to vacant text.
+- _Stay fast_: Profile your app's performance from the comfort of your command
+  line!
 
-##### to remove the airbnb eslint config:
+<sub><i>Keywords: Create React App, React Boilerplate, Custom Template, Typescript, React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
 
-1. in `/.eslintrc.js`, remove the line that says `extends`
-2. in `/package.json`, remove the `eslint-config-airbnb` dependency
-3. run `npm updated` (or `yarn`)
+## Contributors
 
-After completing the steps above, the only rules that eslint will enforce are the ones you define in the `rules` object in `/.eslintrc.js`.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Can-Sahin"><img src="https://avatars2.githubusercontent.com/u/33245689" width="80px;" alt=""/><br /><sub><b>Can Sahin</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Code">💻</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Documentation">📖</a> <a href="#ideas-Can-Sahin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/pulls?q=is%3Apr+reviewed-by%3ACan-Sahin" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/receptiryaki"><img src="https://avatars0.githubusercontent.com/u/3495307" width="80px;" alt=""/><br /><sub><b>Recep Tiryaki</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=receptiryaki" title="Code">💻</a> <a href="#ideas-receptiryaki" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
 
-### prettier js formatting
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 
-starbase uses [Prettier](https://github.com/prettier/prettier) to enforce and simplify code consistency. If you use VS Code, check out the [Prettier VS Code extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) which will allow you to easily format your code to the project specifications with a hotkey.
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-### service worker caching
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-starbase-react uses [offline-plugin](https://github.com/NekR/offline-plugin/) to cache your project assets for offline use. This means that if someone visits your website on [a device that supports service workers](https://caniuse.com/#feat=serviceworkers), they will be able to view your project again, even if their device is offline.
+## License
 
-Out of the box, starbase-react caches everything, because the project is less than 50kb total. If you will be making a larger app, be considerate of your users and limit what you cache-- perhaps avoid caching large images, custom fonts, etc. Check out the [options docs for offline-plugin](https://github.com/NekR/offline-plugin/blob/master/docs/options.md) to learn more.
-
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), by design, only function on secure (https) environments. There is no issue with running starbase-react on an http environment-- the service worker will simply not be utilized.
-
-You may see an info log entry in your console from `offline-plugin` while using the `start` command, feel free to ignore this. `offline-plugin` is not utilized on the dev server because [it doesn't always play nice with `webpack-dev-server`](https://github.com/NekR/offline-plugin/issues/138). It is intentionally only utilized in production builds.
-
-#### to remove offline-plugin:
-
-1. in `/package.json`, remove the `offline-plugin` dependency
-2. in `/internals/webpack/webpack.config.base.js`, remove all references to `OfflinePlugin` and/or `offline-plugin`
-3. in `/src/app.js`, remove the `import` statement that references `offline-plugin`
-
-_There is no consequence to removing this feature, besides limiting offline access to your project._
-
-#### to disable (but not delete) offline-plugin:
-
-You can disable `offline-plugin` without deleting it from your codebase, so that it's not included in your production code (reduces filesize) but is ready to be re-enabled if you ever want it back.
-
-1. in `/src/app.js`, comment-out the `import` statement that references `offline-plugin`
-
-## features you may want to know about
-
-### html webpack plugin
-
-starbase-react uses [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to generate HTML assets. The reason for this is to allow webpack to manage other assets, such as favicons and embedded images, as part of the build process. Adding new templates (pages) is very easy, but you'll need to read the official plugin docs for the latest info.
+This project is licensed under the MIT license, Copyright (c) 2019 Can Sahin.
+For more information see `LICENSE.md`.

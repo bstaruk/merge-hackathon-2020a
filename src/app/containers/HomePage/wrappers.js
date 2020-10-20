@@ -10,10 +10,6 @@ export const PageWrapper = styled.main`
   align-items: center;
   justify-content: flex-start;
 
-  @media ${mq.mobileMd} {
-    padding: 1rem;
-  }
-
   @media ${mq.mobileLg} {
     padding: 1.5rem;
   }

@@ -1,6 +1,14 @@
 import { put, takeLatest, delay } from 'redux-saga/effects';
 import { actions } from './slice';
 
+const userData = {
+  'brian@staruk.net': {
+    emailAddress: 'brian@staruk.net',
+    firstName: 'Brian',
+    lastName: 'Staruk',
+  },
+};
+
 export function* loginSaga({ payload }) {
   if (!payload) {
     yield put(
@@ -35,7 +43,7 @@ export function* loginSaga({ payload }) {
 
   yield delay(1500);
 
-  if (payload.email !== 'brian@staruk.net') {
+  if (!userData[payload.email]) {
     yield put(
       actions.loginError([
         {
@@ -59,11 +67,7 @@ export function* loginSaga({ payload }) {
   //   return;
   // }
 
-  yield put(
-    actions.loginSuccess({
-      email: payload.email,
-    }),
-  );
+  yield put(actions.loginSuccess(userData[payload.email]));
 }
 
 export function* userSaga() {

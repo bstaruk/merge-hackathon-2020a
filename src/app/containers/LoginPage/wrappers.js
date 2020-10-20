@@ -87,3 +87,8 @@ export const FormSubmitWrapper = styled.div`
   width: 100%;
   margin-top: 0.5rem;
 `;
+
+export const PrePopWrapper = styled.div`
+  margin: 2rem auto 0;
+  text-align: center;
+`;

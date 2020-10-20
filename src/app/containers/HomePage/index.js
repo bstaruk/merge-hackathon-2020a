@@ -39,10 +39,6 @@ export function HomePage() {
     }
   }, [history, userAuthenticated]);
 
-  useEffect(() => {
-    dispatch(actions.loadThing());
-  }, [dispatch]);
-
   const onButtonClick = () => {
     dispatch(actions.loadThing());
   };

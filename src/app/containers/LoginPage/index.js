@@ -9,6 +9,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 
 import { H1 } from 'app/components/Type';
 
@@ -26,6 +28,7 @@ import {
   FormWrapper,
   FormFieldWrapper,
   FormSubmitWrapper,
+  PrePopWrapper,
 } from './wrappers';
 
 export function LoginPage() {
@@ -60,6 +63,11 @@ export function LoginPage() {
     };
 
     dispatch(userActions.login(payload));
+  };
+
+  const onPrePopClick = () => {
+    setUsername('bob@mergeworld.com');
+    setPassword('abc123');
   };
 
   const emailError =
@@ -143,6 +151,19 @@ export function LoginPage() {
             </Button>
           </FormSubmitWrapper>
         </FormWrapper>
+
+        <PrePopWrapper>
+          <Typography variant="body2">
+            <Link
+              href="#"
+              onClick={onPrePopClick}
+              color="textSecondary"
+              size="small"
+            >
+              pre-populate logins
+            </Link>
+          </Typography>
+        </PrePopWrapper>
       </PageWrapper>
     </>
   );

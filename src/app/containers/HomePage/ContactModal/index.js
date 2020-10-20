@@ -7,6 +7,10 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Avatar from '@material-ui/core/Avatar';
+
+import DrImg from './lexus.jpg';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -23,6 +27,15 @@ const useStyles = makeStyles(theme => ({
     outline: 'none',
     minWidth: 320,
     maxWidth: 640,
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  avatar: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
   },
 }));
 
@@ -44,9 +57,24 @@ export default function ContactModal({ handleClose, open }) {
     >
       <Fade in={open}>
         <div className={classes.paper}>
-          <Typography variant="h5" component="h2" gutterBottom>
-            Contact Modal
-          </Typography>
+          <Box className={classes.header} mb={4}>
+            <Box>
+              <Avatar alt="Dr. Lexus" src={DrImg} className={classes.avatar} />
+            </Box>
+            <Box pl={2}>
+              <Typography variant="h6" component="h3">
+                Contacting Dr. Lexus
+              </Typography>
+              <Typography variant="body2" color="textSecondary" gutterBottom>
+                (866) 555-1234
+              </Typography>
+              <Typography variant="body2" color="textSecondary">
+                <Link href="mailto:dr.lexus@brawndocorp.com">
+                  dr.lexus@brawndocorp.com
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
           <Typography variant="body1" gutterBottom>
             Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
             libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla

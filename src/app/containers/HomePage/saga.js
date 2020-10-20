@@ -3,7 +3,7 @@ import { actions } from './slice';
 
 export function* getThing() {
   yield delay(500);
-  yield put(actions.loadThingSuccess('thing'));
+  yield put(actions.loadThingSuccess('thing loaded'));
 }
 
 export function* homePageSaga() {

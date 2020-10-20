@@ -9,8 +9,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { H1 } from 'app/components/Type';
 
-import { selectUserAuthenticated } from 'app/data/user/selectors';
-import { HeaderWrapper, TitleWrapper } from './wrappers';
+import { selectUser, selectUserAuthenticated } from 'app/data/user/selectors';
+import { HeaderWrapper, TitleWrapper, ButtonWrapper } from './wrappers';
 import { selectThing, selectThingLoading } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 import { homePageSaga } from './saga';
@@ -21,6 +21,7 @@ export function HomePage() {
 
   const thing = useSelector(selectThing);
   const thingLoading = useSelector(selectThingLoading);
+  const user = useSelector(selectUser);
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -39,6 +40,8 @@ export function HomePage() {
     dispatch(actions.loadThing());
   };
 
+  if (!userAuthenticated) return null;
+
   return (
     <>
       <Helmet>
@@ -51,20 +54,22 @@ export function HomePage() {
 
       <HeaderWrapper>
         <TitleWrapper>
-          <H1>Home Page {thing && `(${thing})`}</H1>
+          <H1>Welcome, {user.firstName}</H1>
         </TitleWrapper>
-        <div>
-          <Button
-            variant="contained"
-            color="secondary"
-            startIcon={<DeleteIcon />}
-            onClick={onButtonClick}
-            disabled={thingLoading}
-          >
-            {thingLoading ? 'Loading' : 'Do a thing'}
-          </Button>
-        </div>
       </HeaderWrapper>
+
+      <ButtonWrapper>
+        <Button
+          variant="contained"
+          color="secondary"
+          startIcon={<DeleteIcon />}
+          onClick={onButtonClick}
+          disabled={thingLoading}
+        >
+          {thingLoading ? 'Loading' : 'Load a thing'}
+        </Button>
+        {thing && <p>{`(${thing})`}</p>}
+      </ButtonWrapper>
     </>
   );
 }

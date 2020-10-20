@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     line-height: 1.4;
     color: ${props => props.theme.color.mineShaft};
+    background-color: #f0f0f0;
     transition: all 200ms ease;
   }
 

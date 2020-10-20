@@ -70,6 +70,11 @@ export function LoginPage() {
     setPassword('abc123');
   };
 
+  const onClearClick = () => {
+    setUsername('');
+    setPassword('');
+  };
+
   const emailError =
     userErrors.filter(e => e.field === 'email').length > 0
       ? userErrors.filter(e => e.field === 'email')[0]
@@ -153,14 +158,13 @@ export function LoginPage() {
         </FormWrapper>
 
         <PrePopWrapper>
-          <Typography variant="body2">
-            <Link
-              href="#"
-              onClick={onPrePopClick}
-              color="textSecondary"
-              size="small"
-            >
-              pre-populate logins
+          <Typography variant="body2" color="textSecondary">
+            <Link href="#" onClick={onPrePopClick} color="inherit" size="small">
+              pre-populate
+            </Link>
+            {' / '}
+            <Link href="#" onClick={onClearClick} color="inherit" size="small">
+              clear
             </Link>
           </Typography>
         </PrePopWrapper>

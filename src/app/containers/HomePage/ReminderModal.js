@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -52,6 +54,10 @@ export default function ReminderModal({ handleClose, open }) {
             eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
             Suspendisse laoreet id sem at tristique.
           </Typography>
+          <Box mt={2}>
+            <Button onClick={() => handleClose()}>Dismiss Reminder</Button>{' '}
+            <Button color="primary">Contact Physician</Button>
+          </Box>
         </div>
       </Fade>
     </Modal>

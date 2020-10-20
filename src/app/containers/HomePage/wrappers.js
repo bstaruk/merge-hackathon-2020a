@@ -4,11 +4,15 @@ import { mq } from 'utils/style';
 export const PageWrapper = styled.main`
   width: 100%;
   /* height: 100vh; */
-  padding: 1rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  @media ${mq.mobileMd} {
+    padding: 1rem;
+  }
 
   @media ${mq.mobileLg} {
     padding: 1.5rem;

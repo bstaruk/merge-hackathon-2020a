@@ -54,19 +54,20 @@ export function HomePage() {
 
       <HeaderWrapper>
         <TitleWrapper>
-          <H1>Welcome, {user.firstName}</H1>
+          <H1>Welcome, {user.firstName}!</H1>
         </TitleWrapper>
       </HeaderWrapper>
 
       <ButtonWrapper>
         <Button
           variant="contained"
-          color="secondary"
+          color="primary"
+          size="large"
           startIcon={<DeleteIcon />}
           onClick={onButtonClick}
           disabled={thingLoading}
         >
-          {thingLoading ? 'Loading' : 'Load a thing'}
+          {thingLoading ? 'Loading a thing' : 'Load a thing'}
         </Button>
         {thing && <p>{`(${thing})`}</p>}
       </ButtonWrapper>

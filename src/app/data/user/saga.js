@@ -2,8 +2,6 @@ import { put, takeLatest, delay } from 'redux-saga/effects';
 import { actions } from './slice';
 
 export function* loginSaga({ payload }) {
-  console.log('loginSaga', { payload }); // eslint-disable-line
-
   if (!payload) {
     yield put(
       actions.loginError([

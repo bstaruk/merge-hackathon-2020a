@@ -8,6 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Button from '@material-ui/core/Button';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import { H1 } from 'app/components/Type';
 
@@ -19,6 +20,7 @@ import {
 import { actions as userActions } from 'app/data/user/slice';
 
 import {
+  LoadingWrapper,
   PageWrapper,
   HeaderWrapper,
   FormWrapper,
@@ -57,7 +59,6 @@ export function LoginPage() {
       password,
     };
 
-    console.log('onSubmit', payload); // eslint-disable-line
     dispatch(userActions.login(payload));
   };
 
@@ -80,6 +81,9 @@ export function LoginPage() {
         />
       </Helmet>
 
+      <LoadingWrapper loading={userLoading ? 1 : undefined}>
+        <LinearProgress />
+      </LoadingWrapper>
       <PageWrapper>
         <FormWrapper onSubmit={onSubmit}>
           <HeaderWrapper>

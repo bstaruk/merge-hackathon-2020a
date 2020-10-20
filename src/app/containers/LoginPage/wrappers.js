@@ -1,5 +1,26 @@
 import styled from 'styled-components/macro';
 
+export const LoadingWrapper = styled.div`
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  max-height: ${props => (props.loading ? 'none' : '0')};
+  opacity: ${props => (props.loading ? '1' : '0')};
+  transition: opacity 500ms ease;
+
+  & > * {
+    width: 80%;
+    max-width: 30rem;
+  }
+`;
+
 export const PageWrapper = styled.main`
   width: 100%;
   height: 100vh;

@@ -40,8 +40,8 @@ export function App() {
 
       <ThemeProvider theme={primaryTheme}>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/home" component={HomePage} />
           <Route component={NotFoundPage} />
         </Switch>
         <GlobalStyle />

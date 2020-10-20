@@ -27,7 +27,7 @@ export function HomePage() {
 
   useEffect(() => {
     if (!userAuthenticated) {
-      history.replace('/login');
+      history.replace('/');
     }
   }, [history, userAuthenticated]);
 

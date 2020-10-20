@@ -40,7 +40,7 @@ export function LoginPage() {
 
   useEffect(() => {
     if (userAuthenticated) {
-      history.replace('/');
+      history.replace('/home');
     }
   }, [history, userAuthenticated]);
 

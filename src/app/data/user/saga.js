@@ -15,27 +15,23 @@ export function* loginSaga({ payload }) {
     return;
   }
 
+  const requiredFieldErrors = [];
   if (!payload.email) {
-    yield put(
-      actions.loginError([
-        {
-          field: 'email',
-          message: 'Email Address is required',
-        },
-      ]),
-    );
-    return;
+    requiredFieldErrors.push({
+      field: 'email',
+      message: 'Email Address is required',
+    });
   }
 
   if (!payload.password) {
-    yield put(
-      actions.loginError([
-        {
-          field: 'password',
-          message: 'Password is required',
-        },
-      ]),
-    );
+    requiredFieldErrors.push({
+      field: 'password',
+      message: 'Password is required',
+    });
+  }
+
+  if (requiredFieldErrors.length > 0) {
+    yield put(actions.loginError(requiredFieldErrors));
     return;
   }
 

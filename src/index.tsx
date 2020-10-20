@@ -33,9 +33,9 @@ interface Props {
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
     <HelmetProvider>
-      <React.StrictMode>
-        <Component />
-      </React.StrictMode>
+      {/* <React.StrictMode> */}
+      <Component />
+      {/* </React.StrictMode> */}
     </HelmetProvider>
   </Provider>
 );

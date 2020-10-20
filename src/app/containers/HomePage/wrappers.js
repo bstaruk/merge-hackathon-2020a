@@ -1,5 +1,15 @@
 import styled from 'styled-components/macro';
 
+export const PageWrapper = styled.main`
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
 export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
@@ -17,4 +27,10 @@ export const TitleWrapper = styled.div`
 export const ButtonWrapper = styled.div`
   margin: 2rem auto 0;
   text-align: center;
+`;
+
+export const TabsWrapper = styled.div`
+  margin: 2rem auto 0;
+  flex-grow: 1;
+  display: flex;
 `;

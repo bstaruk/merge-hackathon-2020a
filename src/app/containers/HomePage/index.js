@@ -10,7 +10,14 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { H1 } from 'app/components/Type';
 
 import { selectUser, selectUserAuthenticated } from 'app/data/user/selectors';
-import { HeaderWrapper, TitleWrapper, ButtonWrapper } from './wrappers';
+import Tabs from './Tabs';
+import {
+  PageWrapper,
+  HeaderWrapper,
+  TitleWrapper,
+  ButtonWrapper,
+  TabsWrapper,
+} from './wrappers';
 import { selectThing, selectThingLoading } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 import { homePageSaga } from './saga';
@@ -52,25 +59,31 @@ export function HomePage() {
         />
       </Helmet>
 
-      <HeaderWrapper>
-        <TitleWrapper>
-          <H1>Welcome, {user.firstName}!</H1>
-        </TitleWrapper>
-      </HeaderWrapper>
+      <PageWrapper>
+        <HeaderWrapper>
+          <TitleWrapper>
+            <H1>Welcome, {user.firstName}!</H1>
+          </TitleWrapper>
+        </HeaderWrapper>
 
-      <ButtonWrapper>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          startIcon={<DeleteIcon />}
-          onClick={onButtonClick}
-          disabled={thingLoading}
-        >
-          {thingLoading ? 'Loading a thing' : 'Load a thing'}
-        </Button>
-        {thing && <p>{`(${thing})`}</p>}
-      </ButtonWrapper>
+        <ButtonWrapper>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            startIcon={<DeleteIcon />}
+            onClick={onButtonClick}
+            disabled={thingLoading}
+          >
+            {thingLoading ? 'Loading a thing' : 'Load a thing'}
+          </Button>
+          {thing && <p>{`(${thing})`}</p>}
+        </ButtonWrapper>
+
+        <TabsWrapper>
+          <Tabs />
+        </TabsWrapper>
+      </PageWrapper>
     </>
   );
 }

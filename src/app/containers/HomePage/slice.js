@@ -4,7 +4,7 @@ export const initialState = {
   thing: null,
   loading: false,
   error: null,
-  contactModalOpen: true,
+  contactModalOpen: false,
 };
 
 const homePageSlice = createSlice({

@@ -47,17 +47,17 @@ export function* loginSaga({ payload }) {
     return;
   }
 
-  if (payload.password !== 'password') {
-    yield put(
-      actions.loginError([
-        {
-          field: 'password',
-          message: 'Invalid Password',
-        },
-      ]),
-    );
-    return;
-  }
+  // if (payload.password !== 'password') {
+  //   yield put(
+  //     actions.loginError([
+  //       {
+  //         field: 'password',
+  //         message: 'Invalid Password',
+  //       },
+  //     ]),
+  //   );
+  //   return;
+  // }
 
   yield put(
     actions.loginSuccess({

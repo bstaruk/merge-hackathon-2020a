@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
@@ -11,6 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { H1 } from 'app/components/Type';
 
 import { selectUser, selectUserAuthenticated } from 'app/data/user/selectors';
+import ReminderModal from './ReminderModal';
 import Tabs from './Tabs';
 import {
   PageWrapper,
@@ -26,6 +27,7 @@ export function HomePage() {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: homePageSaga });
 
+  const [reminderModalOpen, setReminderModalOpen] = useState(false);
   const thing = useSelector(selectThing);
   const thingLoading = useSelector(selectThingLoading);
   const user = useSelector(selectUser);
@@ -70,8 +72,20 @@ export function HomePage() {
             disabled={thingLoading}
           >
             {thingLoading ? 'Loading a thing' : 'Load a thing'}
+          </Button>{' '}
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={() => setReminderModalOpen(true)}
+          >
+            Trigger Reminder Modal
           </Button>
           {thing && <Box mt={2}>{`(${thing})`}</Box>}
+          <ReminderModal
+            open={reminderModalOpen}
+            handleClose={() => setReminderModalOpen(false)}
+          />
         </ButtonWrapper>
 
         <TabsWrapper>

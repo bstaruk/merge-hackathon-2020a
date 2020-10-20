@@ -11,6 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { H1 } from 'app/components/Type';
 
 import { selectUser, selectUserAuthenticated } from 'app/data/user/selectors';
+import ContactModal from './ContactModal';
 import ReminderModal from './ReminderModal';
 import Tabs from './Tabs';
 import {
@@ -19,7 +20,11 @@ import {
   ButtonWrapper,
   TabsWrapper,
 } from './wrappers';
-import { selectThing, selectThingLoading } from './selectors';
+import {
+  selectThing,
+  selectThingLoading,
+  selectContactModalOpen,
+} from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 import { homePageSaga } from './saga';
 
@@ -32,6 +37,7 @@ export function HomePage() {
   const thingLoading = useSelector(selectThingLoading);
   const user = useSelector(selectUser);
   const userAuthenticated = useSelector(selectUserAuthenticated);
+  const contactModalOpen = useSelector(selectContactModalOpen);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -43,6 +49,10 @@ export function HomePage() {
 
   const onButtonClick = () => {
     dispatch(actions.loadThing());
+  };
+
+  const onContactModalClose = () => {
+    dispatch(actions.setContactModalOpen(false));
   };
 
   if (!userAuthenticated) return null;
@@ -92,6 +102,8 @@ export function HomePage() {
           <Tabs />
         </TabsWrapper>
       </PageWrapper>
+
+      <ContactModal open={contactModalOpen} handleClose={onContactModalClose} />
     </>
   );
 }

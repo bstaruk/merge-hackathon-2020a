@@ -7,15 +7,20 @@ const selectDomain = state => state.homePage || initialState;
 
 export const selectThing = createSelector(
   [selectDomain],
-  githubRepoFormState => githubRepoFormState.thing,
+  homePageState => homePageState.thing,
 );
 
 export const selectThingLoading = createSelector(
   [selectDomain],
-  githubRepoFormState => githubRepoFormState.loading,
+  homePageState => homePageState.loading,
 );
 
 export const selectThingError = createSelector(
   [selectDomain],
-  githubRepoFormState => githubRepoFormState.error,
+  homePageState => homePageState.error,
+);
+
+export const selectContactModalOpen = createSelector(
+  [selectDomain],
+  homePageState => homePageState.contactModalOpen,
 );

@@ -4,6 +4,7 @@ export const initialState = {
   thing: null,
   loading: false,
   error: null,
+  contactModalOpen: true,
 };
 
 const homePageSlice = createSlice({
@@ -22,6 +23,9 @@ const homePageSlice = createSlice({
     loadThingError(state, action) {
       state.error = action.payload;
       state.loading = false;
+    },
+    setContactModalOpen(state, action) {
+      state.contactModalOpen = action.payload;
     },
   },
 });

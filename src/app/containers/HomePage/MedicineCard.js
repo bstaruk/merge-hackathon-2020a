@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,6 +13,8 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import { actions } from './slice';
 
 const useStyles = makeStyles(theme => ({
   expand: {
@@ -28,6 +32,12 @@ const useStyles = makeStyles(theme => ({
 function MedicineCard({ title }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleContactClick = () => {
+    dispatch(actions.setContactModalOpen(true));
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -53,7 +63,9 @@ function MedicineCard({ title }) {
       </CardContent>
 
       <CardActions disableSpacing>
-        <Button size="small">Request Assistance</Button>
+        <Button size="small" onClick={handleContactClick}>
+          Request Assistance
+        </Button>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

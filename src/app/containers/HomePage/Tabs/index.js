@@ -4,8 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+
+import MedicineCard from '../MedicineCard';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,11 +20,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
 }
@@ -70,13 +68,31 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <Typography variant="h5" component="h2" gutterBottom>
+          Tab One
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
+          libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
+          commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
+          eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
+          Suspendisse laoreet id sem at tristique.
+        </Typography>
+        <Box mb={2} mt={3}>
+          <MedicineCard title="Medicine Card One" />
+        </Box>
+        <Box mb={2}>
+          <MedicineCard title="Medicine Card Two" />
+        </Box>
+        <Box mb={2}>
+          <MedicineCard title="Medicine Card Three" />
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Typography>Item Two</Typography>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Typography>Item Three</Typography>
       </TabPanel>
     </div>
   );

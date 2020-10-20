@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { GlobalStyle } from 'styles/global-styles';
 import primaryTheme from 'styles/theme/primary';
@@ -39,6 +40,7 @@ export function App() {
       </Helmet>
 
       <ThemeProvider theme={primaryTheme}>
+        <CssBaseline />
         <Switch>
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/home" component={HomePage} />

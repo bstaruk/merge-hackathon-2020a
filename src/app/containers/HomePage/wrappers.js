@@ -20,10 +20,6 @@ export const HeaderWrapper = styled.header`
   margin: 0 auto;
 `;
 
-export const TitleWrapper = styled.div`
-  margin-right: 1rem;
-`;
-
 export const ButtonWrapper = styled.div`
   margin: 2rem auto 0;
   text-align: center;

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { useHistory } from 'react-router-dom';
 
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 
@@ -14,7 +15,6 @@ import Tabs from './Tabs';
 import {
   PageWrapper,
   HeaderWrapper,
-  TitleWrapper,
   ButtonWrapper,
   TabsWrapper,
 } from './wrappers';
@@ -57,9 +57,7 @@ export function HomePage() {
 
       <PageWrapper>
         <HeaderWrapper>
-          <TitleWrapper>
-            <H1>Welcome, {user.firstName}!</H1>
-          </TitleWrapper>
+          <H1>Welcome, {user.firstName}!</H1>
         </HeaderWrapper>
 
         <ButtonWrapper>
@@ -73,7 +71,7 @@ export function HomePage() {
           >
             {thingLoading ? 'Loading a thing' : 'Load a thing'}
           </Button>
-          {thing && <div>{`(${thing})`}</div>}
+          {thing && <Box mt={2}>{`(${thing})`}</Box>}
         </ButtonWrapper>
 
         <TabsWrapper>

@@ -71,7 +71,7 @@ export default function SimpleTabs() {
         <Typography variant="h5" component="h2" gutterBottom>
           Tab One
         </Typography>
-        <Typography variant="body2" gutterBottom>
+        <Typography variant="body1" gutterBottom>
           Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
           libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
           commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
@@ -89,10 +89,30 @@ export default function SimpleTabs() {
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography>Item Two</Typography>
+        <Typography variant="h5" component="h2" gutterBottom>
+          Tab Two
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
+          luctus et ultrices posuere cubilia curae; Proin nec auctor eros.
+          Curabitur vitae egestas sem, ac lobortis lorem. Phasellus dapibus elit
+          vel dui tincidunt, scelerisque congue magna mattis. Suspendisse et
+          pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
+          vehicula nulla, eu viverra dolor mauris eu lacus.
+        </Typography>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Typography>Item Three</Typography>
+        <Typography variant="h5" component="h2" gutterBottom>
+          Tab Three
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Cras fermentum eget ex a scelerisque. Sed posuere nulla nec purus
+          elementum, in posuere elit dapibus. Aenean consectetur elit feugiat
+          viverra elementum. Sed sodales felis diam, sit amet auctor nisi
+          efficitur quis. Nam vel arcu ultrices nulla vehicula ornare. Nunc
+          dapibus nulla accumsan, gravida leo ac, tempor ipsum. In at mattis
+          orci, in pulvinar urna.
+        </Typography>
       </TabPanel>
     </div>
   );

@@ -14,6 +14,7 @@ import { H1 } from 'app/components/Type';
 import {
   selectUserAuthenticated,
   selectUserErrors,
+  selectUserLoading,
 } from 'app/data/user/selectors';
 import { actions as userActions } from 'app/data/user/slice';
 
@@ -30,6 +31,7 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
 
   const userAuthenticated = useSelector(selectUserAuthenticated);
+  const userLoading = useSelector(selectUserLoading);
   const userErrors = useSelector(selectUserErrors);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -131,6 +133,7 @@ export function LoginPage() {
               color="primary"
               size="large"
               type="submit"
+              disabled={userLoading}
             >
               Login
             </Button>

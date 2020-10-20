@@ -62,6 +62,7 @@ export default function SimpleTabs() {
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
+          centered
         >
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />

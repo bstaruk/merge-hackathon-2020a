@@ -73,7 +73,7 @@ export function HomePage() {
           >
             {thingLoading ? 'Loading a thing' : 'Load a thing'}
           </Button>
-          {thing && <p>{`(${thing})`}</p>}
+          {thing && <div>{`(${thing})`}</div>}
         </ButtonWrapper>
 
         <TabsWrapper>

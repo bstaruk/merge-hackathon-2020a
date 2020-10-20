@@ -33,4 +33,6 @@ export const TabsWrapper = styled.div`
   margin: 2rem auto 0;
   flex-grow: 1;
   display: flex;
+  width: 100%;
+  max-width: 50rem;
 `;

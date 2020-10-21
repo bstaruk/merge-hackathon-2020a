@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { selectUser } from 'app/data/user/selectors';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
@@ -12,6 +14,7 @@ import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import { deepPurple } from '@material-ui/core/colors';
 
 import DrImg from './lexus.jpg';
 import { selectCommunityModalMed } from '../selectors';
@@ -39,14 +42,17 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-start',
   },
   avatar: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    color: theme.palette.getContrastText(deepPurple[500]),
+    backgroundColor: deepPurple[500],
   },
 }));
 
 export default function CommunityModal({ handleClose, open }) {
   const classes = useStyles();
   const med = useSelector(selectCommunityModalMed);
+  const user = useSelector(selectUser);
 
   return (
     <Modal
@@ -65,19 +71,17 @@ export default function CommunityModal({ handleClose, open }) {
         <div className={classes.paper}>
           <Box className={classes.header} mb={2}>
             <Box>
-              <Avatar alt="Dr. Lexus" src={DrImg} className={classes.avatar} />
+              <Avatar className={classes.avatar}>
+                {user.firstName.charAt(0)}
+                {user.lastName.charAt(0)}
+              </Avatar>
             </Box>
             <Box pl={2}>
               <Typography variant="h6" component="h3">
-                Contacting Dr. Lexus
-              </Typography>
-              <Typography variant="body2" color="textSecondary" gutterBottom>
-                (866) 555-1234
+                {user.firstName} {user.lastName}
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                <Link href="mailto:dr.lexus@brawndocorp.com">
-                  dr.lexus@brawndocorp.com
-                </Link>
+                Someplace, USA
               </Typography>
             </Box>
           </Box>

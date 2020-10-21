@@ -11,11 +11,7 @@ import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
 import CommunityCard from '../CommunityCard';
 import MedicineCard from '../MedicineCard';
-import {
-  selectActiveTab,
-  selectAdviceDismissed,
-  selectAdviceLiked,
-} from '../selectors';
+import { selectActiveTab, selectAdviceDismissed } from '../selectors';
 import { actions } from '../slice';
 
 const medicineCards = [

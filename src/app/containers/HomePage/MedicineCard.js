@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Chip from '@material-ui/core/Chip';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 
 import { actions } from './slice';
 
@@ -98,7 +98,7 @@ function MedicineCard({ category, dosage, tags, title }) {
             aria-label="share some tips or advice"
             onClick={() => handleCommunityClick('neutral')}
           >
-            <ErrorOutlineIcon />
+            <SentimentDissatisfiedIcon />
           </IconButton>
         </Box>
         <Box mr={1}>

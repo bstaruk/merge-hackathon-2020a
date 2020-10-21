@@ -32,10 +32,10 @@ export function HomePage() {
     }
   }, [history, userAuthenticated]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setReminderModalOpen(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setReminderModalOpen(true), 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const onContactModalClose = () => {
     dispatch(actions.setContactModalOpen(false));

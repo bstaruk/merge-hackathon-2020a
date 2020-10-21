@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,9 +12,15 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Chip from '@material-ui/core/Chip';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import Box from '@material-ui/core/Box';
+import Avatar from '@material-ui/core/Avatar';
+import Tooltip from '@material-ui/core/Tooltip';
+import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
+import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 
-import { actions } from './slice';
+import { deepPurple } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
   expand: {
@@ -28,26 +33,17 @@ const useStyles = makeStyles(theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  chipsWrapper: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    flexWrap: 'wrap',
-    marginTop: theme.spacing(2),
-    '& > *': {
-      margin: theme.spacing(0.5),
-    },
+  avatar: {
+    width: theme.spacing(6),
+    height: theme.spacing(6),
+    color: theme.palette.getContrastText(deepPurple[500]),
+    backgroundColor: deepPurple[500],
   },
 }));
 
-function CommunityCard({ title }) {
+function CommunityCard({ category, title }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-
-  const dispatch = useDispatch();
-
-  const handleContactClick = () => {
-    dispatch(actions.setContactModalOpen(true));
-  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -57,29 +53,78 @@ function CommunityCard({ title }) {
     <Card variant="outlined">
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
-          Category or Explanation
+          {category}
         </Typography>
         <Typography variant="h6" component="h2" gutterBottom>
           {title}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          Some basic content about the medicine or lorem ipsum dolor sit amet,
+          Some advice about the medicine or lorem ipsum dolor sit amet,
           consectetur adipiscing elit. Fusce tincidunt diam vel turpis lobortis
           rhoncus. Fusce in ante ac dui fringilla rhoncus. Nunc lacinia luctus
           sem. Quisque luctus tempus lorem rutrum condimentum. Integer non risus
           dapibus, pretium mauris vitae, finibus augue. Quisque pretium turpis
           vitae enim feugiat dictum.
         </Typography>
-        <div className={classes.chipsWrapper}>
-          <Chip variant="outlined" size="small" label="Heart Health" />
-          <Chip variant="outlined" size="small" label="Twice-daily" />
-          <Chip variant="outlined" size="small" label="Take with meal" />
-        </div>
+
+        {/* user info */}
+        <Box
+          display="flex"
+          justifyContent="flex-start"
+          alignItems="center"
+          mt={3}
+        >
+          <Avatar className={classes.avatar}>JA</Avatar>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="flex-start"
+            ml={2}
+          >
+            <Typography variant="body2" color="textSecondary">
+              Johnny Appleseed
+            </Typography>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              mt={0.5}
+            >
+              <Box>
+                <Tooltip title="Parent" arrow>
+                  <Typography color="textSecondary">
+                    <ChildFriendlyIcon fontSize="small" color="inherit" />
+                  </Typography>
+                </Tooltip>
+              </Box>
+              <Box ml={1}>
+                <Tooltip title="Cyclist" arrow>
+                  <Typography color="textSecondary">
+                    <DirectionsBikeIcon fontSize="small" color="inherit" />
+                  </Typography>
+                </Tooltip>
+              </Box>
+              <Box ml={1}>
+                <Tooltip title="Traveler" arrow>
+                  <Typography color="textSecondary">
+                    <AirplanemodeActiveIcon fontSize="small" color="inherit" />
+                  </Typography>
+                </Tooltip>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </CardContent>
 
       <CardActions disableSpacing>
-        <Button size="small" onClick={handleContactClick}>
-          Request Assistance
+        <Button
+          variant="contained"
+          size="small"
+          color="secondary"
+          startIcon={<FavoriteBorderIcon />}
+        >
+          Thank User
         </Button>
         <IconButton
           className={clsx(classes.expand, {
@@ -96,7 +141,7 @@ function CommunityCard({ title }) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography variant="h6" component="h5" gutterBottom>
-            Additional Information:
+            Why am I seeing this?
           </Typography>
           <Typography paragraph>
             Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
@@ -110,29 +155,6 @@ function CommunityCard({ title }) {
             Suspendisse vel lectus sit amet purus suscipit tincidunt. Morbi a
             mauris et quam imperdiet sodales. Pellentesque a elit tortor.
           </Typography>
-
-          <Typography paragraph>
-            Cras fermentum eget ex a scelerisque. Sed posuere nulla nec purus
-            elementum, in posuere elit dapibus. Aenean consectetur elit feugiat
-            viverra elementum. Sed sodales felis diam, sit amet auctor nisi
-            efficitur quis. Nam vel arcu ultrices nulla vehicula ornare. Nunc
-            dapibus nulla accumsan, gravida leo ac, tempor ipsum. In at mattis
-            orci, in pulvinar urna.
-          </Typography>
-
-          <Typography paragraph>
-            Phasellus ut neque finibus, pharetra ex ultrices, aliquam nulla.
-            Vivamus tellus metus, feugiat a semper id, pretium ut ex. Aliquam
-            rhoncus gravida ullamcorper. Praesent ut lorem sit amet mi varius
-            placerat venenatis ac mi. Ut luctus maximus elit eu consectetur. Ut
-            ut molestie orci. Etiam facilisis, nisl ut facilisis scelerisque,
-            risus sapien gravida mi, eu sagittis leo ligula vel augue. Proin vel
-            ultricies lorem, vitae hendrerit tellus. Proin ex sem, tincidunt a
-            facilisis ac, venenatis consectetur neque. Quisque vel porttitor
-            nisl. Nullam ut tortor vel velit convallis euismod quis ut orci.
-            Duis ac nunc dignissim, ornare purus non, sodales quam. Nam sit amet
-            consequat dui, eu sagittis lacus.
-          </Typography>
         </CardContent>
       </Collapse>
     </Card>
@@ -140,6 +162,7 @@ function CommunityCard({ title }) {
 }
 
 CommunityCard.propTypes = {
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 

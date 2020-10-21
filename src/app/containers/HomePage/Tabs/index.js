@@ -105,13 +105,22 @@ export default function SimpleTabs() {
           vehicula nulla, eu viverra dolor mauris eu lacus.
         </Typography>
         <Box mb={2} mt={3}>
-          <CommunityCard title="Community Card One" />
+          <CommunityCard
+            category="Recommendations"
+            title="Community Card One"
+          />
         </Box>
         <Box mb={2}>
-          <CommunityCard title="Community Card Two" />
+          <CommunityCard
+            category="Tips &amp; Tricks"
+            title="Community Card Two"
+          />
         </Box>
         <Box mb={2}>
-          <CommunityCard title="Community Card Three" />
+          <CommunityCard
+            category="Ramping-Up Advice"
+            title="Community Card Three"
+          />
         </Box>
       </TabPanel>
     </div>

@@ -37,6 +37,27 @@ const medicineCards = [
   },
 ];
 
+const communityCards = [
+  {
+    id: 1,
+    category: 'Advice &amp; Encouragement',
+    title: 'Quisque tincidunt ultricies vestibulum',
+    user: 'eastwood',
+  },
+  {
+    id: 2,
+    category: 'Tips &amp; Tricks',
+    title: 'Etiam in tellus ultrices, efficitur sem nec, semper elit',
+    user: 'cartman',
+  },
+  {
+    id: 3,
+    category: 'Ramping-Up Advice',
+    title: 'Curabitur et feugiat felis, auctor efficitur mi',
+    user: 'appleseed',
+  },
+];
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -121,38 +142,29 @@ export default function SimpleTabs() {
         ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Community Support
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
-          luctus et ultrices posuere cubilia curae; Proin nec auctor eros.
-          Curabitur vitae egestas sem, ac lobortis lorem. Phasellus dapibus elit
-          vel dui tincidunt, scelerisque congue magna mattis. Suspendisse et
-          pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
-          vehicula nulla, eu viverra dolor mauris eu lacus.
-        </Typography>
-        <Box mb={2} mt={3}>
-          <CommunityCard
-            category="Advice &amp; Encouragement"
-            title="Quisque tincidunt ultricies vestibulum"
-            user="eastwood"
-          />
+        <Box mb={3}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Community Support
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
+            luctus et ultrices posuere cubilia curae; Proin nec auctor eros.
+            Curabitur vitae egestas sem, ac lobortis lorem. Phasellus dapibus
+            elit vel dui tincidunt, scelerisque congue magna mattis. Suspendisse
+            et pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
+            vehicula nulla, eu viverra dolor mauris eu lacus.
+          </Typography>
         </Box>
-        <Box mb={2}>
-          <CommunityCard
-            category="Tips &amp; Tricks"
-            title="Etiam in tellus ultrices, efficitur sem nec, semper elit"
-            user="cartman"
-          />
-        </Box>
-        <Box mb={2}>
-          <CommunityCard
-            category="Ramping-Up Advice"
-            title="Curabitur et feugiat felis, auctor efficitur mi"
-            user="appleseed"
-          />
-        </Box>
+
+        {communityCards.map(card => (
+          <Box mb={2} key={card.id}>
+            <CommunityCard
+              category={card.category}
+              title={card.title}
+              user={card.user}
+            />
+          </Box>
+        ))}
       </TabPanel>
     </div>
   );

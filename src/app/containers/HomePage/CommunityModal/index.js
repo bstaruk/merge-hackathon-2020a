@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectUser } from 'app/data/user/selectors';
@@ -14,6 +14,10 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { deepPurple } from '@material-ui/core/colors';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 import { selectCommunityModalMed } from '../selectors';
 
@@ -48,9 +52,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function CommunityModal({ handleClose, open }) {
+  const [type, setType] = useState(1);
   const classes = useStyles();
   const med = useSelector(selectCommunityModalMed);
   const user = useSelector(selectUser);
+
+  const handleChangeType = event => {
+    setType(event.target.value);
+  };
 
   return (
     <Modal
@@ -67,7 +76,7 @@ export default function CommunityModal({ handleClose, open }) {
     >
       <Fade in={open}>
         <div className={classes.paper}>
-          <Box className={classes.header} mb={2}>
+          <Box className={classes.header} mb={3}>
             <Box>
               <Avatar className={classes.avatar}>
                 {user.firstName.charAt(0)}
@@ -86,6 +95,26 @@ export default function CommunityModal({ handleClose, open }) {
           <Typography variant="body1">
             <strong>Medication:</strong> {med}
           </Typography>
+          <Box mt={3}>
+            <FormControl
+              variant="outlined"
+              fullWidth
+              className={classes.formControl}
+            >
+              <InputLabel id="community-type-label">Type</InputLabel>
+              <Select
+                labelId="community-type-label"
+                id="community-type"
+                value={type}
+                onChange={handleChangeType}
+                label="Type"
+              >
+                <MenuItem value={1}>Something</MenuItem>
+                <MenuItem value={2}>Something else</MenuItem>
+                <MenuItem value={3}>Something even elser</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
           <Box mt={2}>
             <TextField
               id="contact-message"

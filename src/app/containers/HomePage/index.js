@@ -35,7 +35,7 @@ export function HomePage() {
   }, [history, userAuthenticated]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setReminderModalOpen(true), 2000);
+    const timer = setTimeout(() => setReminderModalOpen(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 

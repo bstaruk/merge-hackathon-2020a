@@ -59,17 +59,16 @@ export default function SimpleTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="simple tabs example"
+          aria-label="dashboard tabs"
           centered
         >
-          <Tab label="Tab One" {...a11yProps(0)} />
-          <Tab label="Tab Two" {...a11yProps(1)} />
-          <Tab label="Tab Three" {...a11yProps(2)} />
+          <Tab label="Your Medications" {...a11yProps(0)} />
+          <Tab label="Community Support" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <Typography variant="h5" component="h2" gutterBottom>
-          Tab One
+          Your Medications
         </Typography>
         <Typography variant="body1" gutterBottom>
           Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
@@ -90,7 +89,7 @@ export default function SimpleTabs() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography variant="h5" component="h2" gutterBottom>
-          Tab Two
+          Community Support
         </Typography>
         <Typography variant="body1" gutterBottom>
           Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
@@ -99,19 +98,6 @@ export default function SimpleTabs() {
           vel dui tincidunt, scelerisque congue magna mattis. Suspendisse et
           pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
           vehicula nulla, eu viverra dolor mauris eu lacus.
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Tab Three
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Cras fermentum eget ex a scelerisque. Sed posuere nulla nec purus
-          elementum, in posuere elit dapibus. Aenean consectetur elit feugiat
-          viverra elementum. Sed sodales felis diam, sit amet auctor nisi
-          efficitur quis. Nam vel arcu ultrices nulla vehicula ornare. Nunc
-          dapibus nulla accumsan, gravida leo ac, tempor ipsum. In at mattis
-          orci, in pulvinar urna.
         </Typography>
       </TabPanel>
     </div>

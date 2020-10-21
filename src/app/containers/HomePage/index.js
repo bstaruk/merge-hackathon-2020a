@@ -48,9 +48,8 @@ export function HomePage() {
   }, [history, userAuthenticated]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setReminderModalOpen(true);
-    }, 3000);
+    const timer = setTimeout(() => setReminderModalOpen(true), 3000);
+    return () => clearTimeout(timer);
   }, []);
 
   const onButtonClick = () => {

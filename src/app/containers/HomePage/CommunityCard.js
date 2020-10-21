@@ -138,14 +138,19 @@ function CommunityCard({ category, title, user }) {
       </CardContent>
 
       <CardActions disableSpacing>
-        <Button
-          variant="contained"
-          size="small"
-          color="secondary"
-          startIcon={<FavoriteBorderIcon />}
-        >
-          Thank User
-        </Button>
+        <Box mr={2}>
+          <Button
+            variant="contained"
+            size="small"
+            color="secondary"
+            startIcon={<FavoriteBorderIcon />}
+          >
+            Thank User
+          </Button>
+        </Box>
+        <Box>
+          <Button size="small">Dismiss</Button>
+        </Box>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

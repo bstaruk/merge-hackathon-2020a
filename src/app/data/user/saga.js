@@ -5,7 +5,7 @@ const userData = {
   'bob@mergeworld.com': {
     emailAddress: 'bob@mergeworld.com',
     firstName: 'Bob',
-    lastName: 'Skywalker',
+    lastName: 'Roberts',
   },
   'mary@mergeworld.com': {
     emailAddress: 'mary@mergeworld.com',

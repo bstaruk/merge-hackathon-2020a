@@ -84,11 +84,10 @@ export default function ContactModal({ handleClose, open }) {
           </Typography>
           <Box mt={4}>
             <TextField
-              id="outlined-multiline-static"
-              label="Multiline"
+              id="contact-message"
+              label="Your Message"
               multiline
               rows={4}
-              defaultValue="Default Value"
               variant="outlined"
               fullWidth
             />

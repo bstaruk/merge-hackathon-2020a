@@ -65,7 +65,7 @@ export default function ContactModal({ handleClose, open }) {
             </Box>
             <Box pl={2}>
               <Typography variant="h6" component="h3">
-                Contacting Dr. Lexus
+                Paging Dr. Lexus
               </Typography>
               <Typography variant="body2" color="textSecondary" gutterBottom>
                 (866) 555-1234

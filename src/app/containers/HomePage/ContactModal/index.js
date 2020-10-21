@@ -9,6 +9,8 @@ import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 import DrImg from './lexus.jpg';
 
@@ -78,12 +80,35 @@ export default function ContactModal({ handleClose, open }) {
           <Typography variant="body1" gutterBottom>
             Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
             libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
-            commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
-            eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
-            Suspendisse laoreet id sem at tristique.
+            commodo.
           </Typography>
+          <Box mt={4}>
+            <TextField
+              id="outlined-multiline-static"
+              label="Multiline"
+              multiline
+              rows={4}
+              defaultValue="Default Value"
+              variant="outlined"
+              fullWidth
+            />
+          </Box>
           <Box mt={2}>
-            <Button onClick={() => handleClose()}>Cancel</Button>
+            <Grid container alignItems="center" spacing={3}>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleClose()}
+                  size="large"
+                >
+                  Submit
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button onClick={() => handleClose()}>Cancel</Button>
+              </Grid>
+            </Grid>
           </Box>
         </div>
       </Fade>

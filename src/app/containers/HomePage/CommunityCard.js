@@ -25,18 +25,18 @@ import { deepPurple } from '@material-ui/core/colors';
 const dummyUsers = {
   appleseed: {
     firstName: 'Johnny',
-    lastName: 'Appleseed',
-    initials: 'JA',
+    lastName: 'A.',
+    location: 'Someplace, USA',
   },
   eastwood: {
     firstName: 'Clint',
-    lastName: 'Eastwood',
-    initials: 'CE',
+    lastName: 'E.',
+    location: 'Another Town, USA',
   },
   cartman: {
     firstName: 'Liane',
-    lastName: 'Cartman',
-    initials: 'LC',
+    lastName: 'C.',
+    location: 'Big City, USA',
   },
 };
 
@@ -52,8 +52,8 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    width: theme.spacing(6),
-    height: theme.spacing(6),
+    width: theme.spacing(8),
+    height: theme.spacing(8),
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
@@ -92,7 +92,10 @@ function CommunityCard({ category, title, user }) {
           alignItems="center"
           mt={3}
         >
-          <Avatar className={classes.avatar}>{userData.initials}</Avatar>
+          <Avatar className={classes.avatar}>
+            {userData.firstName.charAt(0)}
+            {userData.lastName.charAt(0)}
+          </Avatar>
           <Box
             display="flex"
             flexDirection="column"
@@ -100,8 +103,11 @@ function CommunityCard({ category, title, user }) {
             alignItems="flex-start"
             ml={2}
           >
-            <Typography variant="body2" color="textSecondary">
+            <Typography variant="body2" color="textPrimary">
               {userData.firstName} {userData.lastName}
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              {userData.location}
             </Typography>
             <Box
               display="flex"

@@ -40,13 +40,13 @@ const medicineCards = [
 const communityCards = [
   {
     id: 1,
-    category: 'Advice &amp; Encouragement',
+    category: 'Advice & Encouragement',
     title: 'Quisque tincidunt ultricies vestibulum',
     user: 'eastwood',
   },
   {
     id: 2,
-    category: 'Tips &amp; Tricks',
+    category: 'Tips & Tricks',
     title: 'Etiam in tellus ultrices, efficitur sem nec, semper elit',
     user: 'cartman',
   },

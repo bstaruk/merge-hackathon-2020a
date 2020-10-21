@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
+import CommunityCard from '../CommunityCard';
 import MedicineCard from '../MedicineCard';
 
 function TabPanel(props) {
@@ -47,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -99,6 +100,15 @@ export default function SimpleTabs() {
           pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
           vehicula nulla, eu viverra dolor mauris eu lacus.
         </Typography>
+        <Box mb={2} mt={3}>
+          <CommunityCard title="Community Card One" />
+        </Box>
+        <Box mb={2}>
+          <CommunityCard title="Community Card Two" />
+        </Box>
+        <Box mb={2}>
+          <CommunityCard title="Community Card Three" />
+        </Box>
       </TabPanel>
     </div>
   );

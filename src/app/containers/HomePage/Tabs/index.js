@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
 import CommunityCard from '../CommunityCard';
 import MedicineCard from '../MedicineCard';
@@ -96,6 +97,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  noResultsIcon: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+  },
 }));
 
 export default function SimpleTabs() {
@@ -179,10 +184,20 @@ export default function SimpleTabs() {
             ))}
           </>
         ) : (
-          <Typography variant="body1" color="error">
-            There is no more advice to show for now, but be sure to check back
-            later because new content is added every day!
-          </Typography>
+          <Box display="flex" justifyContent="flex-start" alignItems="center">
+            <Box mr={2}>
+              <LiveHelpIcon
+                className={classes.noResultsIcon}
+                color="secondary"
+              />
+            </Box>
+            <Box>
+              <Typography variant="body1" color="secondary">
+                There is no more advice to show for now, but be sure to check
+                back later because new content is added every day!
+              </Typography>
+            </Box>
+          </Box>
         )}
       </TabPanel>
     </div>

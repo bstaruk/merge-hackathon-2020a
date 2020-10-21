@@ -160,6 +160,7 @@ export default function SimpleTabs() {
           <Box mb={2} key={card.id}>
             <CommunityCard
               category={card.category}
+              id={card.id}
               title={card.title}
               user={card.user}
             />

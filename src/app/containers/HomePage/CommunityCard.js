@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,6 +14,7 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -21,6 +23,9 @@ import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 
 import { deepPurple } from '@material-ui/core/colors';
+
+import { actions } from './slice';
+import { selectAdviceLiked } from './selectors';
 
 const dummyUsers = {
   appleseed: {
@@ -59,15 +64,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function CommunityCard({ category, title, user }) {
+function CommunityCard({ category, id, title, user }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+  const adviceLiked = useSelector(selectAdviceLiked);
+  const dispatch = useDispatch();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleLikeClick = () => {
+    dispatch(actions.likeAdvice(`${id}`));
+  };
+
   const userData = dummyUsers[user] || dummyUsers[0];
+  const isLiked = adviceLiked.some(a => a === `${id}`);
 
   return (
     <Card variant="outlined">
@@ -147,9 +159,10 @@ function CommunityCard({ category, title, user }) {
             variant="contained"
             size="small"
             color="secondary"
-            startIcon={<FavoriteBorderIcon />}
+            startIcon={isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+            onClick={isLiked ? undefined : handleLikeClick}
           >
-            Thank User
+            {isLiked ? 'Thanked' : 'Thank'} User
           </Button>
         </Box>
         <Box>
@@ -192,6 +205,7 @@ function CommunityCard({ category, title, user }) {
 
 CommunityCard.propTypes = {
   category: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   user: PropTypes.oneOf(['eastwood', 'cartman', 'appleseed']).isRequired,
 };

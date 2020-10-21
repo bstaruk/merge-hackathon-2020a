@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -13,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
 import DrImg from './lexus.jpg';
+import { selectCommunityModalMed } from '../selectors';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -28,7 +30,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(4),
     outline: 'none',
     minWidth: 320,
-    maxWidth: 640,
+    maxWidth: 520,
+    width: '100%',
   },
   header: {
     display: 'flex',
@@ -43,6 +46,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function CommunityModal({ handleClose, open }) {
   const classes = useStyles();
+  const med = useSelector(selectCommunityModalMed);
 
   return (
     <Modal
@@ -77,12 +81,10 @@ export default function CommunityModal({ handleClose, open }) {
               </Typography>
             </Box>
           </Box>
-          <Typography variant="body1" gutterBottom>
-            Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
-            libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
-            commodo.
+          <Typography variant="body1">
+            <strong>Medication:</strong> {med}
           </Typography>
-          <Box mt={3}>
+          <Box mt={2}>
             <TextField
               id="contact-message"
               label="Your Message"

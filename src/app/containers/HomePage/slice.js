@@ -4,6 +4,7 @@ export const initialState = {
   activeTab: 0,
   contactModalOpen: false,
   communityModalOpen: false,
+  communityModalMed: '',
 };
 
 const homePageSlice = createSlice({
@@ -17,7 +18,8 @@ const homePageSlice = createSlice({
       state.contactModalOpen = action.payload;
     },
     setCommunityModalOpen(state, action) {
-      state.communityModalOpen = action.payload;
+      state.communityModalOpen = action.payload.open;
+      state.communityModalMed = action.payload.med || '';
     },
   },
 });

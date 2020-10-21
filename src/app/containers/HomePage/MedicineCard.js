@@ -54,7 +54,7 @@ function MedicineCard({ category, tags, title }) {
   };
 
   const handleCommunityClick = () => {
-    dispatch(actions.setCommunityModalOpen(true));
+    dispatch(actions.setCommunityModalOpen({ open: true, med: title }));
   };
 
   const handleExpandClick = () => {

@@ -44,7 +44,7 @@ export function HomePage() {
   };
 
   const onCommunityModalClose = () => {
-    dispatch(actions.setCommunityModalOpen(false));
+    dispatch(actions.setCommunityModalOpen({ open: false }));
   };
 
   if (!userAuthenticated) return null;

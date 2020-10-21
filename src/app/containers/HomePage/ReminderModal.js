@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -7,6 +9,8 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
+
+import { actions } from './slice';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -28,6 +32,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function ReminderModal({ handleClose, open }) {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  const handleContactClick = () => {
+    dispatch(actions.setContactModalOpen(true));
+  };
 
   return (
     <Modal
@@ -56,7 +66,9 @@ export default function ReminderModal({ handleClose, open }) {
           </Typography>
           <Box mt={2}>
             <Button onClick={() => handleClose()}>Dismiss Reminder</Button>{' '}
-            <Button color="primary">Contact Physician</Button>
+            <Button color="primary" onClick={handleContactClick}>
+              Contact Physician
+            </Button>
           </Box>
         </div>
       </Fade>

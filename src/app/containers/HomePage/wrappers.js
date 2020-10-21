@@ -4,7 +4,7 @@ import { mq } from 'utils/style';
 export const PageWrapper = styled.main`
   width: 100%;
   /* height: 100vh; */
-  padding: 0;
+  padding: 1rem 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;

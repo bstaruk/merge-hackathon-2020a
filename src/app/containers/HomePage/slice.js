@@ -3,6 +3,8 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 export const initialState = {
   activeTab: 0,
   contactModalOpen: false,
+  communityModalOpen: false,
+  communityModalMed: '',
 };
 
 const homePageSlice = createSlice({
@@ -14,6 +16,10 @@ const homePageSlice = createSlice({
     },
     setContactModalOpen(state, action) {
       state.contactModalOpen = action.payload;
+    },
+    setCommunityModalOpen(state, action) {
+      state.communityModalOpen = action.payload.open;
+      state.communityModalMed = action.payload.med || '';
     },
   },
 });

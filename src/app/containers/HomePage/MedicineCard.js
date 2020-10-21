@@ -53,6 +53,10 @@ function MedicineCard({ category, tags, title }) {
     dispatch(actions.setContactModalOpen(true));
   };
 
+  const handleCommunityClick = () => {
+    dispatch(actions.setCommunityModalOpen({ open: true, med: title }));
+  };
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -81,17 +85,28 @@ function MedicineCard({ category, tags, title }) {
 
       <CardActions disableSpacing>
         <Box>
-          <IconButton color="primary" aria-label="share a positive experience">
+          <IconButton
+            color="primary"
+            aria-label="share a positive experience"
+            onClick={handleCommunityClick}
+          >
             <SentimentVerySatisfiedIcon />
           </IconButton>
         </Box>
         <Box>
-          <IconButton aria-label="share some tips or advice">
+          <IconButton
+            aria-label="share some tips or advice"
+            onClick={handleCommunityClick}
+          >
             <ErrorOutlineIcon />
           </IconButton>
         </Box>
         <Box mr={1}>
-          <IconButton color="secondary" aria-label="share a poor experience">
+          <IconButton
+            color="secondary"
+            aria-label="share a poor experience"
+            onClick={handleCommunityClick}
+          >
             <SentimentVeryDissatisfiedIcon />
           </IconButton>
         </Box>

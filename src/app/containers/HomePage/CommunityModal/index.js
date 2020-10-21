@@ -134,7 +134,7 @@ export default function CommunityModal({ handleClose, open }) {
             </Box>
             <Box pl={2}>
               <Typography variant="h6" component="h3">
-                {user.firstName} {user.lastName}
+                {user.firstName} {user.lastName.charAt(0)}.
               </Typography>
               <Typography variant="body2" color="textSecondary">
                 Someplace, USA

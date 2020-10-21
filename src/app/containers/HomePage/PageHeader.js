@@ -35,7 +35,10 @@ function PageHeader() {
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
-      <Avatar className={classes.avatar}>B</Avatar>
+      <Avatar className={classes.avatar}>
+        {user.firstName.charAt(0)}
+        {user.lastName.charAt(0)}
+      </Avatar>
       <Box
         display="flex"
         flexDirection="column"
@@ -44,7 +47,7 @@ function PageHeader() {
         ml={2}
       >
         <Typography variant="h6" component="h2">
-          Hi, {user.firstName}!
+          Hi, {user.firstName} {user.lastName}!
         </Typography>
         <Box
           display="flex"

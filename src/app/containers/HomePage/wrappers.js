@@ -19,15 +19,6 @@ export const PageWrapper = styled.main`
   }
 `;
 
-export const HeaderWrapper = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 50rem;
-  width: 100%;
-  margin: 0 auto;
-`;
-
 export const TabsWrapper = styled.div`
   margin: 2rem auto 0;
   flex-grow: 1;

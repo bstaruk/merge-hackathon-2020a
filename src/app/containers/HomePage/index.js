@@ -8,13 +8,12 @@ import { useHistory } from 'react-router-dom';
 // import Button from '@material-ui/core/Button';
 // import DeleteIcon from '@material-ui/icons/Delete';
 
-import { H1 } from 'app/components/Type';
-
-import { selectUser, selectUserAuthenticated } from 'app/data/user/selectors';
+import { selectUserAuthenticated } from 'app/data/user/selectors';
 import ContactModal from './ContactModal';
 import ReminderModal from './ReminderModal';
 import Tabs from './Tabs';
-import { PageWrapper, HeaderWrapper, TabsWrapper } from './wrappers';
+import PageHeader from './PageHeader';
+import { PageWrapper, TabsWrapper } from './wrappers';
 import { selectContactModalOpen } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 
@@ -22,7 +21,6 @@ export function HomePage() {
   useInjectReducer({ key: sliceKey, reducer: reducer });
 
   const [reminderModalOpen, setReminderModalOpen] = useState(false);
-  const user = useSelector(selectUser);
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const contactModalOpen = useSelector(selectContactModalOpen);
   const history = useHistory();
@@ -56,9 +54,7 @@ export function HomePage() {
       </Helmet>
 
       <PageWrapper>
-        <HeaderWrapper>
-          <H1>Welcome, {user.firstName}!</H1>
-        </HeaderWrapper>
+        <PageHeader />
 
         <TabsWrapper>
           <Tabs />

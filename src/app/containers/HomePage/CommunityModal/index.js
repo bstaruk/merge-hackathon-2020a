@@ -19,7 +19,55 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-import { selectCommunityModalMed } from '../selectors';
+import {
+  selectCommunityModalMed,
+  selectCommunityModalMood,
+} from '../selectors';
+
+const typeOptions = {
+  neutral: [
+    {
+      id: 1,
+      label: 'Neutral Option 1',
+    },
+    {
+      id: 2,
+      label: 'Neutral Option 2',
+    },
+    {
+      id: 3,
+      label: 'Neutral Option 3',
+    },
+  ],
+  good: [
+    {
+      id: 1,
+      label: 'Good Option 1',
+    },
+    {
+      id: 2,
+      label: 'Good Option 2',
+    },
+    {
+      id: 3,
+      label: 'Good Option 3',
+    },
+  ],
+  bad: [
+    {
+      id: 1,
+      label: 'Bad Option 1',
+    },
+    {
+      id: 2,
+      label: 'Bad Option 2',
+    },
+    {
+      id: 3,
+      label: 'Bad Option 3',
+    },
+  ],
+};
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -55,6 +103,7 @@ export default function CommunityModal({ handleClose, open }) {
   const [type, setType] = useState(1);
   const classes = useStyles();
   const med = useSelector(selectCommunityModalMed);
+  const mood = useSelector(selectCommunityModalMood);
   const user = useSelector(selectUser);
 
   const handleChangeType = event => {
@@ -109,9 +158,11 @@ export default function CommunityModal({ handleClose, open }) {
                 onChange={handleChangeType}
                 label="Type"
               >
-                <MenuItem value={1}>Something</MenuItem>
-                <MenuItem value={2}>Something else</MenuItem>
-                <MenuItem value={3}>Something even elser</MenuItem>
+                {typeOptions[mood].map(option => (
+                  <MenuItem value={option.id} key={option.id}>
+                    {option.label}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Box>

@@ -53,8 +53,8 @@ function MedicineCard({ category, tags, title }) {
     dispatch(actions.setContactModalOpen(true));
   };
 
-  const handleCommunityClick = () => {
-    dispatch(actions.setCommunityModalOpen({ open: true, med: title }));
+  const handleCommunityClick = mood => {
+    dispatch(actions.setCommunityModalOpen({ open: true, med: title, mood }));
   };
 
   const handleExpandClick = () => {
@@ -88,7 +88,7 @@ function MedicineCard({ category, tags, title }) {
           <IconButton
             color="primary"
             aria-label="share a positive experience"
-            onClick={handleCommunityClick}
+            onClick={() => handleCommunityClick('good')}
           >
             <SentimentVerySatisfiedIcon />
           </IconButton>
@@ -96,7 +96,7 @@ function MedicineCard({ category, tags, title }) {
         <Box>
           <IconButton
             aria-label="share some tips or advice"
-            onClick={handleCommunityClick}
+            onClick={() => handleCommunityClick('neutral')}
           >
             <ErrorOutlineIcon />
           </IconButton>
@@ -105,7 +105,7 @@ function MedicineCard({ category, tags, title }) {
           <IconButton
             color="secondary"
             aria-label="share a poor experience"
-            onClick={handleCommunityClick}
+            onClick={() => handleCommunityClick('bad')}
           >
             <SentimentVeryDissatisfiedIcon />
           </IconButton>

@@ -24,3 +24,8 @@ export const selectCommunityModalMed = createSelector(
   [selectDomain],
   homePageState => homePageState.communityModalMed,
 );
+
+export const selectCommunityModalMood = createSelector(
+  [selectDomain],
+  homePageState => homePageState.communityModalMood,
+);

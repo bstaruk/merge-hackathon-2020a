@@ -118,22 +118,22 @@ export default function SimpleTabs() {
         </Typography>
         <Box mb={2} mt={3}>
           <CommunityCard
-            category="Recommendations"
-            title="Community Card One"
+            category="Advice &amp; Encouragement"
+            title="Quisque tincidunt ultricies vestibulum"
             user="eastwood"
           />
         </Box>
         <Box mb={2}>
           <CommunityCard
             category="Tips &amp; Tricks"
-            title="Community Card Two"
+            title="Etiam in tellus ultrices, efficitur sem nec, semper elit"
             user="cartman"
           />
         </Box>
         <Box mb={2}>
           <CommunityCard
             category="Ramping-Up Advice"
-            title="Community Card Three"
+            title="Curabitur et feugiat felis, auctor efficitur mi"
             user="appleseed"
           />
         </Box>

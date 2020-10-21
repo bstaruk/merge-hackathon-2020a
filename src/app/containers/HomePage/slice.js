@@ -2,6 +2,7 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 
 export const initialState = {
   activeTab: 0,
+  adviceDismissed: [],
   adviceLiked: [],
   contactModalOpen: false,
   communityModalOpen: false,
@@ -15,6 +16,9 @@ const homePageSlice = createSlice({
   reducers: {
     setActiveTab(state, action) {
       state.activeTab = action.payload;
+    },
+    dismissAdvice(state, action) {
+      state.adviceDismissed = state.adviceDismissed.concat([action.payload]);
     },
     likeAdvice(state, action) {
       state.adviceLiked = state.adviceLiked.concat([action.payload]);

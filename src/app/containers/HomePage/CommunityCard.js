@@ -78,6 +78,10 @@ function CommunityCard({ category, id, title, user }) {
     dispatch(actions.likeAdvice(`${id}`));
   };
 
+  const handleDismissClick = () => {
+    dispatch(actions.dismissAdvice(`${id}`));
+  };
+
   const userData = dummyUsers[user] || dummyUsers[0];
   const isLiked = adviceLiked.some(a => a === `${id}`);
 
@@ -166,7 +170,9 @@ function CommunityCard({ category, id, title, user }) {
           </Button>
         </Box>
         <Box>
-          <Button size="small">Dismiss</Button>
+          <Button size="small" onClick={handleDismissClick}>
+            Dismiss
+          </Button>
         </Box>
         <IconButton
           className={clsx(classes.expand, {

@@ -20,6 +20,11 @@ export const selectAdviceLiked = createSelector(
   homePageState => homePageState.adviceLiked,
 );
 
+export const selectAdviceDismissed = createSelector(
+  [selectDomain],
+  homePageState => homePageState.adviceDismissed,
+);
+
 export const selectCommunityModalOpen = createSelector(
   [selectDomain],
   homePageState => homePageState.communityModalOpen,

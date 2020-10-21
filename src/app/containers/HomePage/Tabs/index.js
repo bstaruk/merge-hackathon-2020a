@@ -10,7 +10,11 @@ import Typography from '@material-ui/core/Typography';
 
 import CommunityCard from '../CommunityCard';
 import MedicineCard from '../MedicineCard';
-import { selectActiveTab } from '../selectors';
+import {
+  selectActiveTab,
+  selectAdviceDismissed,
+  selectAdviceLiked,
+} from '../selectors';
 import { actions } from '../slice';
 
 const medicineCards = [
@@ -98,10 +102,15 @@ export default function SimpleTabs() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const value = useSelector(selectActiveTab);
+  const adviceDismissed = useSelector(selectAdviceDismissed);
 
   const handleChange = (event, newValue) => {
     dispatch(actions.setActiveTab(newValue));
   };
+
+  const communityCardsFiltered = communityCards.filter(
+    c => !adviceDismissed.some(d => d === `${c.id}`),
+  );
 
   return (
     <div className={classes.root}>
@@ -156,16 +165,25 @@ export default function SimpleTabs() {
           </Typography>
         </Box>
 
-        {communityCards.map(card => (
-          <Box mb={2} key={card.id}>
-            <CommunityCard
-              category={card.category}
-              id={card.id}
-              title={card.title}
-              user={card.user}
-            />
-          </Box>
-        ))}
+        {communityCardsFiltered.length > 0 ? (
+          <>
+            {communityCardsFiltered.map(card => (
+              <Box mb={2} key={card.id}>
+                <CommunityCard
+                  category={card.category}
+                  id={card.id}
+                  title={card.title}
+                  user={card.user}
+                />
+              </Box>
+            ))}
+          </>
+        ) : (
+          <Typography variant="body1" color="error">
+            There is no more advice to show for now, but be sure to check back
+            later because new content is added every day!
+          </Typography>
+        )}
       </TabPanel>
     </div>
   );

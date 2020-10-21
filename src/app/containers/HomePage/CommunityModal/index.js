@@ -10,13 +10,11 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { deepPurple } from '@material-ui/core/colors';
 
-import DrImg from './lexus.jpg';
 import { selectCommunityModalMed } from '../selectors';
 
 const useStyles = makeStyles(theme => ({

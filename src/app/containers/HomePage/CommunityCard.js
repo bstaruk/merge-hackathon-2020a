@@ -184,7 +184,7 @@ function CommunityCard({ category, title, user }) {
 CommunityCard.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  user: PropTypes.string.isRequired,
+  user: PropTypes.oneOf(['eastwood', 'cartman', 'appleseed']).isRequired,
 };
 
 export default CommunityCard;

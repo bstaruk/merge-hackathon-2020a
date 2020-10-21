@@ -13,6 +13,30 @@ import MedicineCard from '../MedicineCard';
 import { selectActiveTab } from '../selectors';
 import { actions } from '../slice';
 
+const medicineCards = [
+  {
+    id: 1,
+    title: 'Lipsumestra',
+    dosage: '200mg',
+    category: 'Experimental Superpower Ointment',
+    tags: ['Twice-daily', 'Heart health', 'Take with meal'],
+  },
+  {
+    id: 2,
+    title: 'Metamucil',
+    dosage: '600mg',
+    category: 'Dietary Aid',
+    tags: ['Once-daily', 'Gut health', 'Take before breakfast'],
+  },
+  {
+    id: 3,
+    title: 'Yabbadabbin',
+    dosage: '40mg',
+    category: 'Stone Age Sleeping Aid',
+    tags: ['Take before bed'],
+  },
+];
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -72,37 +96,29 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Your Medications
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
-          libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
-          commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
-          eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
-          Suspendisse laoreet id sem at tristique.
-        </Typography>
-        <Box mb={2} mt={3}>
-          <MedicineCard
-            title="Lipsumestra (200mg)"
-            category="Experimental Superpower Ointment"
-            tags={['Twice-daily', 'Heart health', 'Take with meal']}
-          />
+        <Box mb={3}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Your Medications
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
+            libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
+            commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
+            eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
+            Suspendisse laoreet id sem at tristique.
+          </Typography>
         </Box>
-        <Box mb={2}>
-          <MedicineCard
-            title="Metamucil (600mg)"
-            category="Dietary Aid"
-            tags={['Once-daily', 'Gut health', 'Take before breakfast']}
-          />
-        </Box>
-        <Box mb={2}>
-          <MedicineCard
-            title="Yabbadabbin (40mg)"
-            category="Stone Age Sleeping Aid"
-            tags={['Take before bed']}
-          />
-        </Box>
+
+        {medicineCards.map(card => (
+          <Box mb={2} key={card.id}>
+            <MedicineCard
+              title={card.title}
+              dosage={card.dosage}
+              category={card.category}
+              tags={card.tags}
+            />
+          </Box>
+        ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography variant="h5" component="h2" gutterBottom>

@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function MedicineCard({ category, tags, title }) {
+function MedicineCard({ category, dosage, tags, title }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -66,7 +66,7 @@ function MedicineCard({ category, tags, title }) {
       <CardContent>
         <Typography color="textSecondary">{category}</Typography>
         <Typography variant="h6" component="h2" gutterBottom>
-          {title}
+          {title} ({dosage})
         </Typography>
         <Typography variant="body2" color="textSecondary">
           Some basic content about the medicine or lorem ipsum dolor sit amet,
@@ -175,6 +175,7 @@ function MedicineCard({ category, tags, title }) {
 
 MedicineCard.propTypes = {
   category: PropTypes.string.isRequired,
+  dosage: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };

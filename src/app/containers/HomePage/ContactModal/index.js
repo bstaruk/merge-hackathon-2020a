@@ -59,7 +59,7 @@ export default function ContactModal({ handleClose, open }) {
     >
       <Fade in={open}>
         <div className={classes.paper}>
-          <Box className={classes.header} mb={4}>
+          <Box className={classes.header} mb={2}>
             <Box>
               <Avatar alt="Dr. Lexus" src={DrImg} className={classes.avatar} />
             </Box>
@@ -82,7 +82,7 @@ export default function ContactModal({ handleClose, open }) {
             libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
             commodo.
           </Typography>
-          <Box mt={4}>
+          <Box mt={3}>
             <TextField
               id="contact-message"
               label="Your Message"

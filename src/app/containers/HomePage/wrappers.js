@@ -28,11 +28,6 @@ export const HeaderWrapper = styled.header`
   margin: 0 auto;
 `;
 
-export const ButtonWrapper = styled.div`
-  margin: 2rem auto 0;
-  text-align: center;
-`;
-
 export const TabsWrapper = styled.div`
   margin: 2rem auto 0;
   flex-grow: 1;

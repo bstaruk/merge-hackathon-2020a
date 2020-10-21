@@ -10,11 +10,12 @@ import { useHistory } from 'react-router-dom';
 
 import { selectUserAuthenticated } from 'app/data/user/selectors';
 import ContactModal from './ContactModal';
+import CommunityModal from './CommunityModal';
 import ReminderModal from './ReminderModal';
 import Tabs from './Tabs';
 import PageHeader from './PageHeader';
 import { PageWrapper, TabsWrapper } from './wrappers';
-import { selectContactModalOpen } from './selectors';
+import { selectContactModalOpen, selectCommunityModalOpen } from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 
 export function HomePage() {
@@ -23,6 +24,7 @@ export function HomePage() {
   const [reminderModalOpen, setReminderModalOpen] = useState(false);
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const contactModalOpen = useSelector(selectContactModalOpen);
+  const communityModalOpen = useSelector(selectCommunityModalOpen);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -39,6 +41,10 @@ export function HomePage() {
 
   const onContactModalClose = () => {
     dispatch(actions.setContactModalOpen(false));
+  };
+
+  const onCommunityModalClose = () => {
+    dispatch(actions.setCommunityModalOpen(false));
   };
 
   if (!userAuthenticated) return null;
@@ -62,7 +68,10 @@ export function HomePage() {
       </PageWrapper>
 
       <ContactModal open={contactModalOpen} handleClose={onContactModalClose} />
-
+      <CommunityModal
+        open={communityModalOpen}
+        handleClose={onCommunityModalClose}
+      />
       <ReminderModal
         open={reminderModalOpen}
         handleClose={() => setReminderModalOpen(false)}

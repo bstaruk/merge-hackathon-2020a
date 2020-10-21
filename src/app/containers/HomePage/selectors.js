@@ -14,3 +14,8 @@ export const selectContactModalOpen = createSelector(
   [selectDomain],
   homePageState => homePageState.contactModalOpen,
 );
+
+export const selectCommunityModalOpen = createSelector(
+  [selectDomain],
+  homePageState => homePageState.communityModalOpen,
+);

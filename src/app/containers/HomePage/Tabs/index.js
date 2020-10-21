@@ -83,13 +83,25 @@ export default function SimpleTabs() {
           Suspendisse laoreet id sem at tristique.
         </Typography>
         <Box mb={2} mt={3}>
-          <MedicineCard title="Medicine Card One" />
+          <MedicineCard
+            title="Lipsumestra (200mg)"
+            category="Experimental Superpower Ointment"
+            tags={['Twice-daily', 'Heart health', 'Take with meal']}
+          />
         </Box>
         <Box mb={2}>
-          <MedicineCard title="Medicine Card Two" />
+          <MedicineCard
+            title="Metamucil (600mg)"
+            category="Dietary Aid"
+            tags={['Once-daily', 'Gut health', 'Take before breakfast']}
+          />
         </Box>
         <Box mb={2}>
-          <MedicineCard title="Medicine Card Three" />
+          <MedicineCard
+            title="Yabbadabbin (40mg)"
+            category="Stone Age Sleeping Aid"
+            tags={['Take before bed']}
+          />
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

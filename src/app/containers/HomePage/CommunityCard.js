@@ -72,9 +72,7 @@ function CommunityCard({ category, title, user }) {
   return (
     <Card variant="outlined">
       <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {category}
-        </Typography>
+        <Typography color="textSecondary">{category}</Typography>
         <Typography variant="h6" component="h2" gutterBottom>
           {title}
         </Typography>

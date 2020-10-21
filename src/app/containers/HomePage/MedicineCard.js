@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function MedicineCard({ title }) {
+function MedicineCard({ category, tags, title }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -56,9 +56,7 @@ function MedicineCard({ title }) {
   return (
     <Card variant="outlined">
       <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          Category or Explanation
-        </Typography>
+        <Typography color="textSecondary">{category}</Typography>
         <Typography variant="h6" component="h2" gutterBottom>
           {title}
         </Typography>
@@ -71,9 +69,9 @@ function MedicineCard({ title }) {
           vitae enim feugiat dictum.
         </Typography>
         <div className={classes.chipsWrapper}>
-          <Chip variant="outlined" size="small" label="Heart Health" />
-          <Chip variant="outlined" size="small" label="Twice-daily" />
-          <Chip variant="outlined" size="small" label="Take with meal" />
+          {tags.map((tag, index) => (
+            <Chip variant="outlined" size="small" label={tag} key={index} />
+          ))}
         </div>
       </CardContent>
 
@@ -140,6 +138,8 @@ function MedicineCard({ title }) {
 }
 
 MedicineCard.propTypes = {
+  category: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
 

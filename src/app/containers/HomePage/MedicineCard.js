@@ -13,6 +13,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Chip from '@material-ui/core/Chip';
 
 import { actions } from './slice';
 
@@ -26,6 +27,15 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
+  },
+  chipsWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+    marginTop: theme.spacing(2),
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
   },
 }));
 
@@ -60,6 +70,11 @@ function MedicineCard({ title }) {
           dapibus, pretium mauris vitae, finibus augue. Quisque pretium turpis
           vitae enim feugiat dictum.
         </Typography>
+        <div className={classes.chipsWrapper}>
+          <Chip variant="outlined" size="small" label="Heart Health" />
+          <Chip variant="outlined" size="small" label="Twice-daily" />
+          <Chip variant="outlined" size="small" label="Take with meal" />
+        </div>
       </CardContent>
 
       <CardActions disableSpacing>

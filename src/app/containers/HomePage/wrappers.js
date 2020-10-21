@@ -11,11 +11,11 @@ export const PageWrapper = styled.main`
   justify-content: flex-start;
 
   @media ${mq.mobileLg} {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 
   @media ${mq.tablet} {
-    padding: 2.5rem;
+    padding: 2.5rem 0;
   }
 `;
 

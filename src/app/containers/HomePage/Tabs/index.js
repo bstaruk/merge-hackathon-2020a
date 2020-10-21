@@ -108,18 +108,21 @@ export default function SimpleTabs() {
           <CommunityCard
             category="Recommendations"
             title="Community Card One"
+            user="eastwood"
           />
         </Box>
         <Box mb={2}>
           <CommunityCard
             category="Tips &amp; Tricks"
             title="Community Card Two"
+            user="cartman"
           />
         </Box>
         <Box mb={2}>
           <CommunityCard
             category="Ramping-Up Advice"
             title="Community Card Three"
+            user="appleseed"
           />
         </Box>
       </TabPanel>

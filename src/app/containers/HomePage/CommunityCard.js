@@ -22,6 +22,24 @@ import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 
 import { deepPurple } from '@material-ui/core/colors';
 
+const dummyUsers = {
+  appleseed: {
+    firstName: 'Johnny',
+    lastName: 'Appleseed',
+    initials: 'JA',
+  },
+  eastwood: {
+    firstName: 'Clint',
+    lastName: 'Eastwood',
+    initials: 'CE',
+  },
+  cartman: {
+    firstName: 'Liane',
+    lastName: 'Cartman',
+    initials: 'LC',
+  },
+};
+
 const useStyles = makeStyles(theme => ({
   expand: {
     transform: 'rotate(0deg)',
@@ -41,13 +59,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function CommunityCard({ category, title }) {
+function CommunityCard({ category, title, user }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const userData = dummyUsers[user] || dummyUsers[0];
 
   return (
     <Card variant="outlined">
@@ -74,7 +94,7 @@ function CommunityCard({ category, title }) {
           alignItems="center"
           mt={3}
         >
-          <Avatar className={classes.avatar}>JA</Avatar>
+          <Avatar className={classes.avatar}>{userData.initials}</Avatar>
           <Box
             display="flex"
             flexDirection="column"
@@ -83,7 +103,7 @@ function CommunityCard({ category, title }) {
             ml={2}
           >
             <Typography variant="body2" color="textSecondary">
-              Johnny Appleseed
+              {userData.firstName} {userData.lastName}
             </Typography>
             <Box
               display="flex"
@@ -164,6 +184,7 @@ function CommunityCard({ category, title }) {
 CommunityCard.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
 };
 
 export default CommunityCard;

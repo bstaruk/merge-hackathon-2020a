@@ -47,6 +47,12 @@ export function HomePage() {
     }
   }, [history, userAuthenticated]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setReminderModalOpen(true);
+    }, 3000);
+  }, []);
+
   const onButtonClick = () => {
     dispatch(actions.loadThing());
   };
@@ -82,20 +88,8 @@ export function HomePage() {
             disabled={thingLoading}
           >
             {thingLoading ? 'Loading a thing' : 'Load a thing'}
-          </Button>{' '}
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={() => setReminderModalOpen(true)}
-          >
-            Trigger Reminder Modal
           </Button>
           {thing && <Box mt={2}>{`(${thing})`}</Box>}
-          <ReminderModal
-            open={reminderModalOpen}
-            handleClose={() => setReminderModalOpen(false)}
-          />
         </ButtonWrapper>
 
         <TabsWrapper>
@@ -104,6 +98,11 @@ export function HomePage() {
       </PageWrapper>
 
       <ContactModal open={contactModalOpen} handleClose={onContactModalClose} />
+
+      <ReminderModal
+        open={reminderModalOpen}
+        handleClose={() => setReminderModalOpen(false)}
+      />
     </>
   );
 }

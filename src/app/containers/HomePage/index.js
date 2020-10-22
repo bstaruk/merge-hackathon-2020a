@@ -27,7 +27,7 @@ import { sliceKey, reducer, actions } from './slice';
 export function HomePage() {
   useInjectReducer({ key: sliceKey, reducer: reducer });
 
-  const [reminderModalOpen, setReminderModalOpen] = useState(false);
+  const [reminderModalOpen, setReminderModalOpen] = useState(true);
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const contactModalOpen = useSelector(selectContactModalOpen);
   const communityModalOpen = useSelector(selectCommunityModalOpen);
@@ -40,11 +40,6 @@ export function HomePage() {
       history.replace('/');
     }
   }, [history, userAuthenticated]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setReminderModalOpen(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const onContactModalClose = () => {
     dispatch(actions.setContactModalOpen(false));

@@ -27,24 +27,6 @@ import { deepPurple } from '@material-ui/core/colors';
 import { actions } from './slice';
 import { selectAdviceLiked } from './selectors';
 
-const dummyUsers = {
-  appleseed: {
-    firstName: 'Johnny',
-    lastName: 'A.',
-    location: 'Someplace, USA',
-  },
-  eastwood: {
-    firstName: 'Clint',
-    lastName: 'E.',
-    location: 'Another Town, USA',
-  },
-  cartman: {
-    firstName: 'Liane',
-    lastName: 'C.',
-    location: 'Big City, USA',
-  },
-};
-
 const useStyles = makeStyles(theme => ({
   expand: {
     transform: 'rotate(0deg)',
@@ -64,7 +46,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function CommunityCard({ category, content, id, title, user }) {
+function CommunityCard({
+  category,
+  content,
+  id,
+  title,
+  prefix,
+  firstName,
+  lastName,
+  location,
+}) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const adviceLiked = useSelector(selectAdviceLiked);
@@ -82,7 +73,6 @@ function CommunityCard({ category, content, id, title, user }) {
     dispatch(actions.dismissAdvice(`${id}`));
   };
 
-  const userData = dummyUsers[user] || dummyUsers[0];
   const isLiked = adviceLiked.some(a => a === `${id}`);
 
   return (
@@ -103,8 +93,8 @@ function CommunityCard({ category, content, id, title, user }) {
           mt={3}
         >
           <Avatar className={classes.avatar}>
-            {userData.firstName.charAt(0)}
-            {userData.lastName.charAt(0)}
+            {firstName.charAt(0)}
+            {lastName.charAt(0)}
           </Avatar>
           <Box
             display="flex"
@@ -114,10 +104,11 @@ function CommunityCard({ category, content, id, title, user }) {
             ml={2}
           >
             <Typography variant="body2" color="textPrimary">
-              {userData.firstName} {userData.lastName}
+              {prefix && `${prefix} `}
+              {firstName} {lastName.charAt(0)}.
             </Typography>
             <Typography variant="body2" color="textSecondary">
-              {userData.location}
+              {location}
             </Typography>
             <Box
               display="flex"
@@ -208,7 +199,10 @@ CommunityCard.propTypes = {
   id: PropTypes.number.isRequired,
   content: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
-  user: PropTypes.oneOf(['eastwood', 'cartman', 'appleseed']).isRequired,
+  prefix: PropTypes.string,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
 };
 
 export default CommunityCard;

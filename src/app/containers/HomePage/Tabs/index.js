@@ -259,7 +259,10 @@ const communityCards = [
     category: 'Drug Interaction',
     title:
       'Why does grapefruit juice affect certain medications, and do other citrus fruits have the same effect?',
-    user: 'eastwood',
+    prefix: 'Dr.',
+    firstName: 'Phillip',
+    lastName: 'Morris',
+    location: 'Washington, DC',
     content: (
       <Typography variant="body2" color="textSecondary">
         Years ago, a blood pressure medication study used grapefruit juice as
@@ -276,7 +279,9 @@ const communityCards = [
     category: 'Keeping on track with medication',
     title:
       'Finding it hard to remember to take my meds, whats a good trick for remembering',
-    user: 'cartman',
+    firstName: 'Jane',
+    lastName: 'Doe',
+    location: 'Boston, MA',
     content: (
       <Typography variant="body2" color="textSecondary">
         Visualize your day and taking your medication at a certain time and
@@ -291,7 +296,9 @@ const communityCards = [
     category: 'Side effect',
     title:
       'My skin started to itch and I broke out in hives when I started the medication',
-    user: 'appleseed',
+    firstName: 'Frank',
+    lastName: 'Fernando',
+    location: 'Kansas City, MO',
     content: (
       <Typography variant="body2" color="textSecondary">
         This is a common occurrence when taking the drug. Found that using
@@ -422,7 +429,10 @@ export default function SimpleTabs() {
                   id={card.id}
                   title={card.title}
                   content={card.content}
-                  user={card.user}
+                  prefix={card.prefix}
+                  firstName={card.firstName}
+                  lastName={card.lastName}
+                  location={card.location}
                 />
               </Box>
             ))}

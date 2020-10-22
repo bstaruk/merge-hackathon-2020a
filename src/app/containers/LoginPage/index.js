@@ -13,8 +13,6 @@ import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
-import { H1 } from 'app/components/Type';
-
 import {
   selectUserAuthenticated,
   selectUserErrors,
@@ -25,7 +23,6 @@ import { actions as userActions } from 'app/data/user/slice';
 import {
   LoadingWrapper,
   PageWrapper,
-  HeaderWrapper,
   FormWrapper,
   FormFieldWrapper,
   FormSubmitWrapper,
@@ -101,10 +98,6 @@ export function LoginPage() {
           <img src={logo} alt="ReX" style={{ maxHeight: '7rem' }} />
         </Box>
         <FormWrapper onSubmit={onSubmit}>
-          <HeaderWrapper>
-            <H1>Login</H1>
-          </HeaderWrapper>
-
           <FormFieldWrapper>
             <FormControl variant="outlined" fullWidth error={!!emailError}>
               <InputLabel htmlFor="email">Email Address</InputLabel>

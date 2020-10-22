@@ -32,23 +32,6 @@ export const PageWrapper = styled.main`
   justify-content: center;
 `;
 
-export const HeaderWrapper = styled.header`
-  text-align: center;
-  margin-bottom: 1.25rem;
-
-  & > * {
-    margin: 0;
-  }
-
-  @media ${mq.mobileLg} {
-    margin-bottom: 2rem;
-  }
-
-  @media ${mq.tablet} {
-    margin-bottom: 3rem;
-  }
-`;
-
 export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;

@@ -32,6 +32,67 @@ const medicineCards = [
         strokes and heart attacks.
       </Typography>
     ),
+    moreContent: (
+      <>
+        <Typography variant="h6" component="h5" gutterBottom>
+          Pro Tips:
+        </Typography>
+        <ul>
+          <li>
+            <Typography component="span">
+              In addition to eating a proper diet (such as a
+              low-cholesterol/low-fat diet), other lifestyle changes that may
+              help this medication work better include exercising, losing weight
+              if overweight, and stopping smoking.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Try to take your Atorvastatin around the same time every day.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Check with your doctor before including grapefruit or grapefruit
+              juice in your diet.{' '}
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              If you forget a dose, take the missed dose as soon as you
+              remember. If it’s less than 12 hours until your next dose, skip
+              the missed dose and continue the following day. Don’t take a
+              double dose to make up for the missed one.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Store it at room temperature and away from excess heat and
+              moisture (not in the bathroom){' '}
+            </Typography>
+          </li>
+        </ul>
+
+        <Typography variant="h6" component="h5" gutterBottom>
+          Additional Information:
+        </Typography>
+
+        <Typography paragraph>
+          Common Side Effects include: diarrhea, heartburn, gas, joint pain,
+          forgetfulness/memory loss, confusion
+        </Typography>
+
+        <Typography paragraph>
+          Less Common, More Serious Side Effects (time to talk to your doctor!):
+          muscle pain, tenderness, weakness, lack of energy, fever, chest pain,
+          nausea, exhaustion, unusual bleeding/bruising, loss of appetite, pain
+          in upper right part of stomach, flu-like symptoms, dark urine,
+          yellowing of skin or eyes, rash, hives, itching, difficulty
+          breathing/swallowing, swelling of face / throat / tongue / lips / eyes
+          / hands / feet / ankles / lower legs, hoarseness
+        </Typography>
+      </>
+    ),
   },
   {
     id: 2,
@@ -51,6 +112,69 @@ const medicineCards = [
         symptoms such as shortness of breath or swelling in your ankles or feet.
       </Typography>
     ),
+    moreContent: (
+      <>
+        <Typography variant="h6" component="h5" gutterBottom>
+          Pro Tips:
+        </Typography>
+        <ul>
+          <li>
+            <Typography component="span">
+              Take this medication once daily in the morning
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              If you take this drug too close to bedtime, you may need to wake
+              up to pee. It’s best to take this medication at least 4 hours
+              before bedtime.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              You should avoid prolonged or excessive exposure to direct
+              sunlight while taking this medicine.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              If you forget a dose, take the missed dose as soon as you remember
+              it. However, if it is almost time for your next dose, skip the
+              missed dose and continue your regular dosing schedule. Do not take
+              a double dose to make up for a missed one.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Store it at room temperature and away from excess heat and
+              moisture (not in the bathroom). Do not allow the liquid to freeze.
+            </Typography>
+          </li>
+        </ul>
+
+        <Typography variant="h6" component="h5" gutterBottom>
+          Additional Information:
+        </Typography>
+
+        <Typography paragraph>
+          Common Side Effects Include: Dizziness
+        </Typography>
+
+        <Typography paragraph>
+          Less Common, More Serious Side Effects (time to talk to your doctor!):
+          frequent urination, diarrhea, loss of appetite, headache, hair loss,
+          dry mouth, thirst, nausea, vomiting, weakness, tiredness; drowsiness;
+          restlessness; confusion; muscle weakness, pain, or cramps; fast
+          heartbeat and other signs of dehydration and electrolyte imbalance,
+          blisters or peeling skin, hives, rash, itching, difficulty breathing
+          or swallowing, fever, sore throat, chills, and other signs of
+          infection, unusual bleeding or bruising, ongoing pain that begins in
+          the stomach area, but may spread to the back, joint pain or swelling,
+          changes in vision, eye pain, or swelling or redness in or around the
+          eye
+        </Typography>
+      </>
+    ),
   },
   {
     id: 3,
@@ -66,6 +190,59 @@ const medicineCards = [
         class of drugs known as ACE inhibitors. It works by relaxing blood
         vessels so blood can flow more easily.
       </Typography>
+    ),
+    moreContent: (
+      <>
+        <Typography variant="h6" component="h5" gutterBottom>
+          Pro Tips:
+        </Typography>
+        <ul>
+          <li>
+            <Typography component="span">
+              High-fat meals may decrease the absorption of this medicine.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Check with your doctor before drinking alcohol.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Use care when operating vehicle.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Do not use a salt substitute without checking with your Doctor or
+              Pharmacist.
+            </Typography>
+          </li>
+          <li>
+            <Typography component="span">
+              Store it at room temperature and away from light and excess heat
+              and moisture (not in the bathroom).
+            </Typography>
+          </li>
+        </ul>
+
+        <Typography variant="h6" component="h5" gutterBottom>
+          Additional Information:
+        </Typography>
+
+        <Typography paragraph>
+          Common Side Effects Include: Dizziness
+        </Typography>
+
+        <Typography paragraph>
+          Less Common, More Serious Side Effects (time to talk to your doctor!):
+          excessive tiredness, cough, upset stomach, vomiting, swelling of face
+          / throat / tongue / lips / eyes / hands / feet / ankles / lower legs,
+          hoarseness, difficulty breathing / swallowing, yellowing of skin or
+          eyes, fever, sore throat, chills, other signs of infection, chest
+          pain, lightheadedness, fainting
+        </Typography>
+      </>
     ),
   },
 ];
@@ -179,6 +356,7 @@ export default function SimpleTabs() {
               dosage={card.dosage}
               category={card.category}
               content={card.content}
+              moreContent={card.moreContent}
               tags={card.tags}
             />
           </Box>

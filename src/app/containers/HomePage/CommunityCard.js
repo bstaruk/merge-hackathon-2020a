@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
 
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -43,6 +44,14 @@ const useStyles = makeStyles(theme => ({
     height: theme.spacing(8),
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+  },
+  red: {
+    backgroundColor: red[500],
+    color: 'white',
+
+    '&:hover': {
+      backgroundColor: red[400],
+    },
   },
 }));
 
@@ -147,7 +156,7 @@ function CommunityCard({
           <Button
             variant="contained"
             size="small"
-            color="secondary"
+            className={classes.red}
             startIcon={isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             onClick={isLiked ? undefined : handleLikeClick}
           >

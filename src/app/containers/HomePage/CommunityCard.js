@@ -53,6 +53,15 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: red[400],
     },
   },
+  white: {
+    backgroundColor: 'white',
+    color: red[600],
+
+    '&:hover': {
+      backgroundColor: 'white',
+      color: red[400],
+    },
+  },
 }));
 
 function CommunityCard({
@@ -156,7 +165,7 @@ function CommunityCard({
           <Button
             variant="contained"
             size="small"
-            className={classes.red}
+            className={classes[isLiked ? 'red' : 'white']}
             startIcon={isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             onClick={isLiked ? undefined : handleLikeClick}
           >

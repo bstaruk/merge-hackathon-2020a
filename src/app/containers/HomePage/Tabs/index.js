@@ -384,11 +384,9 @@ export default function SimpleTabs() {
             Your Medications
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Pellentesque efficitur sit amet sapien ac tristique. Donec viverra
-            libero eget iaculis suscipit. Vestibulum rutrum leo eu fringilla
-            commodo. Suspendisse potenti. Donec ultrices massa sit amet nulla
-            eleifend, eget rhoncus metus tristique. Cras ac porttitor purus.
-            Suspendisse laoreet id sem at tristique.
+            Here you can find your prescribed medications. Learn more about the
+            medication you’re taking plus tips for taking them. You can also let
+            us know how you’re feeling, and contact your GP directly.
           </Typography>
         </Box>
 

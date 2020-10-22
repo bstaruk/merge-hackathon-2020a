@@ -15,6 +15,7 @@ import ReminderModal from './ReminderModal';
 import EducationModal from './EducationModal';
 import Tabs from './Tabs';
 import PageHeader from './PageHeader';
+import PageFooter from './PageFooter';
 import { PageWrapper, TabsWrapper } from './wrappers';
 import {
   selectContactModalOpen,
@@ -71,6 +72,8 @@ export function HomePage() {
         <TabsWrapper>
           <Tabs />
         </TabsWrapper>
+
+        <PageFooter />
       </PageWrapper>
 
       <ContactModal open={contactModalOpen} handleClose={onContactModalClose} />

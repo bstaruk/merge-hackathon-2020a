@@ -47,6 +47,12 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(3),
     paddingBottom: theme.spacing(1),
   },
+  green: {
+    color: '#6dc750',
+  },
+  red: {
+    color: '#ff0000',
+  },
 }));
 
 function MedicineCard({
@@ -98,7 +104,7 @@ function MedicineCard({
       <CardActions disableSpacing>
         <Box>
           <IconButton
-            color="primary"
+            className={classes.green}
             aria-label="share a positive experience"
             onClick={() => handleCommunityClick('good')}
           >
@@ -115,7 +121,7 @@ function MedicineCard({
         </Box>
         <Box mr={1}>
           <IconButton
-            color="secondary"
+            className={classes.red}
             aria-label="share a poor experience"
             onClick={() => handleCommunityClick('bad')}
           >

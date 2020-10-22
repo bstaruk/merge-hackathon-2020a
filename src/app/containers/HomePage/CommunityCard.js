@@ -64,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function CommunityCard({ category, id, title, user }) {
+function CommunityCard({ category, content, id, title, user }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const adviceLiked = useSelector(selectAdviceLiked);
@@ -92,14 +92,8 @@ function CommunityCard({ category, id, title, user }) {
         <Typography variant="h6" component="h2" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Some advice about the medicine or lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Fusce tincidunt diam vel turpis lobortis
-          rhoncus. Fusce in ante ac dui fringilla rhoncus. Nunc lacinia luctus
-          sem. Quisque luctus tempus lorem rutrum condimentum. Integer non risus
-          dapibus, pretium mauris vitae, finibus augue. Quisque pretium turpis
-          vitae enim feugiat dictum.
-        </Typography>
+
+        {content}
 
         {/* user info */}
         <Box
@@ -212,6 +206,7 @@ function CommunityCard({ category, id, title, user }) {
 CommunityCard.propTypes = {
   category: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  content: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   user: PropTypes.oneOf(['eastwood', 'cartman', 'appleseed']).isRequired,
 };

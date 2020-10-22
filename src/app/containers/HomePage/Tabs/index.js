@@ -256,21 +256,50 @@ const medicineCards = [
 const communityCards = [
   {
     id: 1,
-    category: 'Advice & Encouragement',
-    title: 'Quisque tincidunt ultricies vestibulum',
+    category: 'Drug Interaction',
+    title:
+      'Why does grapefruit juice affect certain medications, and do other citrus fruits have the same effect?',
     user: 'eastwood',
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        Years ago, a blood pressure medication study used grapefruit juice as
+        the blinding agent so nobody would know what they were getting. It was
+        discovered by pure chance that people taking the drug with the
+        grapefruit juice experienced totally unexpected results. This happens
+        because grapefruit juice contains flavonoids, but other citrus juices do
+        not and are safe to take.
+      </Typography>
+    ),
   },
   {
     id: 2,
-    category: 'Tips & Tricks',
-    title: 'Etiam in tellus ultrices, efficitur sem nec, semper elit',
+    category: 'Keeping on track with medication',
+    title:
+      'Finding it hard to remember to take my meds, whats a good trick for remembering',
     user: 'cartman',
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        Visualize your day and taking your medication at a certain time and
+        place. Once you have that image set in your mind it will help you
+        remember when you are in that location, or at the time of day you
+        visualized.
+      </Typography>
+    ),
   },
   {
     id: 3,
-    category: 'Ramping-Up Advice',
-    title: 'Curabitur et feugiat felis, auctor efficitur mi',
+    category: 'Side effect',
+    title:
+      'My skin started to itch and I broke out in hives when I started the medication',
     user: 'appleseed',
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        This is a common occurrence when taking the drug. Found that using
+        moisturizing cream on the affected area helped a lot for the first few
+        weeks of starting on the drug. After 3 weeks the itching went away and I
+        no longer had to use the moisturizer.
+      </Typography>
+    ),
   },
 ];
 
@@ -392,6 +421,7 @@ export default function SimpleTabs() {
                   category={card.category}
                   id={card.id}
                   title={card.title}
+                  content={card.content}
                   user={card.user}
                 />
               </Box>

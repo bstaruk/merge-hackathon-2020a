@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -14,6 +14,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 import { actions } from './slice';
+import { selectMedCardExpanded } from './selectors';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -43,9 +44,16 @@ const useStyles = makeStyles(theme => ({
 export default function EducationModal({ handleClose, open }) {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const medCardExpanded = useSelector(selectMedCardExpanded);
+  const expanded = medCardExpanded.some(m => m === 1);
 
   const handleContactClick = () => {
-    dispatch(actions.setContactModalOpen(true));
+    if (!expanded) {
+      dispatch(actions.setMedCardExpanded(medCardExpanded.concat([1])));
+    }
+
+    handleClose();
+    window.scrollTo(0, 800);
   };
 
   return (
@@ -68,7 +76,8 @@ export default function EducationModal({ handleClose, open }) {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-            Read the top 5 most common side effects.
+            Read the top 5 most common side effects for{' '}
+            <strong>Atorvastatin</strong>.
           </Typography>
 
           <Box
@@ -87,7 +96,7 @@ export default function EducationModal({ handleClose, open }) {
               </Button>
             </Box>
             <Box>
-              <Button onClick={() => handleClose()}>Dismiss Reminder</Button>{' '}
+              <Button onClick={() => handleClose()}>Dismiss</Button>
             </Box>
           </Box>
         </div>

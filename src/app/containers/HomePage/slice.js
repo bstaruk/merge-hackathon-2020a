@@ -30,10 +30,12 @@ const homePageSlice = createSlice({
     },
     setCommunityModalOpen(state, action) {
       state.communityModalOpen = action.payload.open;
-      state.communityModalMed =
-        action.payload.med || initialState.communityModalMed;
-      state.communityModalMood =
-        action.payload.mood || initialState.communityModalMood;
+      if (action.payload.med) {
+        state.communityModalMed = action.payload.med;
+      }
+      if (action.payload.mood) {
+        state.communityModalMood = action.payload.mood;
+      }
     },
     setMedCardExpanded(state, action) {
       state.medCardExpanded = action.payload;

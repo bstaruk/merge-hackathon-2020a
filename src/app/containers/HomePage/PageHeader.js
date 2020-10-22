@@ -10,7 +10,7 @@ import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
 import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 
-import { blue } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 
 import { selectUser } from 'app/data/user/selectors';
 
@@ -26,8 +26,8 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     width: theme.spacing(7),
     height: theme.spacing(7),
-    color: theme.palette.getContrastText(blue[700]),
-    backgroundColor: blue[700],
+    color: theme.palette.getContrastText(green[200]),
+    backgroundColor: green[200],
   },
 }));
 

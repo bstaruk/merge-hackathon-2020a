@@ -66,7 +66,7 @@ export function LoginPage() {
   };
 
   const onPrePopClick = () => {
-    setUsername('bob@mergeworld.com');
+    setUsername('eroberts@aol.com');
     setPassword('abc123');
   };
 

@@ -2,9 +2,9 @@ import { put, takeLatest, delay } from 'redux-saga/effects';
 import { actions } from './slice';
 
 const userData = {
-  'bob@mergeworld.com': {
-    emailAddress: 'bob@mergeworld.com',
-    firstName: 'Bob',
+  'eroberts@aol.com': {
+    emailAddress: 'eroberts@aol.com',
+    firstName: 'Edgar',
     lastName: 'Roberts',
   },
   'mary@mergeworld.com': {

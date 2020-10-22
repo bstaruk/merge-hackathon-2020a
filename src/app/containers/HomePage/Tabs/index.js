@@ -440,13 +440,10 @@ export default function SimpleTabs() {
         ) : (
           <Box display="flex" justifyContent="flex-start" alignItems="center">
             <Box mr={2}>
-              <LiveHelpIcon
-                className={classes.noResultsIcon}
-                color="secondary"
-              />
+              <LiveHelpIcon className={classes.noResultsIcon} color="primary" />
             </Box>
             <Box>
-              <Typography variant="body1" color="secondary">
+              <Typography variant="body1" color="primary">
                 There is no more advice to show for now, but be sure to check
                 back later because new content is added every day!
               </Typography>

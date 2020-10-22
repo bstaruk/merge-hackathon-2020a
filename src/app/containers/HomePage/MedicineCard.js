@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,6 +20,7 @@ import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfie
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 
 import { actions } from './slice';
+import { selectMedCardExpanded } from './selectors';
 
 const useStyles = makeStyles(theme => ({
   expand: {
@@ -58,6 +59,7 @@ const useStyles = makeStyles(theme => ({
 function MedicineCard({
   category,
   content,
+  id,
   image,
   moreContent,
   dosage,
@@ -65,9 +67,9 @@ function MedicineCard({
   title,
 }) {
   const classes = useStyles();
-  const [expanded, setExpanded] = useState(false);
-
   const dispatch = useDispatch();
+  const medCardExpanded = useSelector(selectMedCardExpanded);
+  const expanded = medCardExpanded.some(m => m === id);
 
   const handleContactClick = () => {
     dispatch(actions.setContactModalOpen(true));
@@ -78,7 +80,13 @@ function MedicineCard({
   };
 
   const handleExpandClick = () => {
-    setExpanded(!expanded);
+    dispatch(
+      actions.setMedCardExpanded(
+        !expanded
+          ? medCardExpanded.concat([id])
+          : medCardExpanded.filter(m => m !== id),
+      ),
+    );
   };
 
   return (
@@ -160,6 +168,7 @@ MedicineCard.propTypes = {
   tags: PropTypes.array.isRequired,
   image: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default MedicineCard;

@@ -400,6 +400,7 @@ export default function SimpleTabs() {
               content={card.content}
               moreContent={card.moreContent}
               tags={card.tags}
+              id={card.id}
             />
           </Box>
         ))}

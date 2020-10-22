@@ -39,3 +39,8 @@ export const selectCommunityModalMood = createSelector(
   [selectDomain],
   homePageState => homePageState.communityModalMood,
 );
+
+export const selectMedCardExpanded = createSelector(
+  [selectDomain],
+  homePageState => homePageState.medCardExpanded,
+);

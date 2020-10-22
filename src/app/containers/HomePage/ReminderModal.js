@@ -72,8 +72,7 @@ export default function ReminderModal({ handleClose, open }) {
           </Typography>
 
           <Typography variant="body1" color="textSecondary" gutterBottom>
-            <strong>It’s time to check in.</strong> It will take less than 1
-            min.
+            <strong>It’s time to check in.</strong>
           </Typography>
 
           <Box mt={2}>

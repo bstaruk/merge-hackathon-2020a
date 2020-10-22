@@ -375,7 +375,7 @@ export default function SimpleTabs() {
           centered
         >
           <Tab label="Your Medications" {...a11yProps(0)} />
-          <Tab label="Community Support" {...a11yProps(1)} />
+          <Tab label="ReX Community" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -408,7 +408,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={1}>
         <Box mb={3}>
           <Typography variant="h5" component="h2" gutterBottom>
-            Community Support
+            ReX Community
           </Typography>
           <Typography variant="body1" gutterBottom>
             Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci

@@ -44,14 +44,9 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - MERGE Hackathon"
-        defaultTitle="MERGE Hackathon"
-      >
-        <meta
-          name="description"
-          content="MERGE Hackathon (October 2020) application"
-        />
-      </Helmet>
+        titleTemplate="%s | ReX"
+        defaultTitle="ReX | Social Medicine Superapp"
+      />
 
       <ThemeProvider theme={primaryTheme}>
         <MuiThemeProvider theme={theme}>

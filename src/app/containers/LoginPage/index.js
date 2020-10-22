@@ -88,10 +88,6 @@ export function LoginPage() {
     <>
       <Helmet>
         <title>Login</title>
-        <meta
-          name="description"
-          content="MERGE Hackathon (October 2020) application homepage"
-        />
       </Helmet>
 
       <LoadingWrapper loading={userLoading ? 1 : undefined}>

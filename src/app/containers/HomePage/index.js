@@ -52,11 +52,7 @@ export function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="MERGE Hackathon (October 2020) application homepage"
-        />
+        <title>Dashboard</title>
       </Helmet>
 
       <PageWrapper>

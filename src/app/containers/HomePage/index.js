@@ -12,10 +12,15 @@ import { selectUserAuthenticated } from 'app/data/user/selectors';
 import ContactModal from './ContactModal';
 import CommunityModal from './CommunityModal';
 import ReminderModal from './ReminderModal';
+import EducationModal from './EducationModal';
 import Tabs from './Tabs';
 import PageHeader from './PageHeader';
 import { PageWrapper, TabsWrapper } from './wrappers';
-import { selectContactModalOpen, selectCommunityModalOpen } from './selectors';
+import {
+  selectContactModalOpen,
+  selectCommunityModalOpen,
+  selectEducationModalOpen,
+} from './selectors';
 import { sliceKey, reducer, actions } from './slice';
 
 export function HomePage() {
@@ -25,6 +30,7 @@ export function HomePage() {
   const userAuthenticated = useSelector(selectUserAuthenticated);
   const contactModalOpen = useSelector(selectContactModalOpen);
   const communityModalOpen = useSelector(selectCommunityModalOpen);
+  const educationModalOpen = useSelector(selectEducationModalOpen);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -45,6 +51,10 @@ export function HomePage() {
 
   const onCommunityModalClose = () => {
     dispatch(actions.setCommunityModalOpen({ open: false }));
+  };
+
+  const onEducationModalClose = () => {
+    dispatch(actions.setEducationModalOpen(false));
   };
 
   if (!userAuthenticated) return null;
@@ -71,6 +81,10 @@ export function HomePage() {
       <ReminderModal
         open={reminderModalOpen}
         handleClose={() => setReminderModalOpen(false)}
+      />
+      <EducationModal
+        open={educationModalOpen}
+        handleClose={onEducationModalClose}
       />
     </>
   );

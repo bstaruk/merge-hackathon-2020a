@@ -44,3 +44,8 @@ export const selectMedCardExpanded = createSelector(
   [selectDomain],
   homePageState => homePageState.medCardExpanded,
 );
+
+export const selectEducationModalOpen = createSelector(
+  [selectDomain],
+  homePageState => homePageState.educationModalOpen,
+);

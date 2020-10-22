@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -13,6 +13,8 @@ import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { deepPurple } from '@material-ui/core/colors';
 
 import { selectUser } from 'app/data/user/selectors';
+
+import { actions } from './slice';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,6 +34,11 @@ const useStyles = makeStyles(theme => ({
 function PageHeader() {
   const classes = useStyles();
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const onEducationClick = () => {
+    dispatch(actions.setEducationModalOpen(true));
+  };
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
@@ -67,7 +74,11 @@ function PageHeader() {
           </Box>
           <Box ml={1}>
             <Tooltip title="Traveler" arrow>
-              <AirplanemodeActiveIcon fontSize="small" color="action" />
+              <AirplanemodeActiveIcon
+                fontSize="small"
+                color="action"
+                onClick={onEducationClick}
+              />
             </Tooltip>
           </Box>
         </Box>

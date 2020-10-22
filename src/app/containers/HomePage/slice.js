@@ -9,6 +9,7 @@ export const initialState = {
   communityModalMed: '',
   communityModalMood: 'neutral',
   medCardExpanded: [],
+  educationModalOpen: false,
 };
 
 const homePageSlice = createSlice({
@@ -36,6 +37,9 @@ const homePageSlice = createSlice({
     },
     setMedCardExpanded(state, action) {
       state.medCardExpanded = action.payload;
+    },
+    setEducationModalOpen(state, action) {
+      state.educationModalOpen = action.payload;
     },
   },
 });

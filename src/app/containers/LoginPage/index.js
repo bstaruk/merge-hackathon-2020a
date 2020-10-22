@@ -9,6 +9,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
@@ -30,6 +31,8 @@ import {
   FormSubmitWrapper,
   PrePopWrapper,
 } from './wrappers';
+
+import logo from './logo.png';
 
 export function LoginPage() {
   const [email, setUsername] = useState('');
@@ -94,6 +97,9 @@ export function LoginPage() {
         <LinearProgress />
       </LoadingWrapper>
       <PageWrapper>
+        <Box mb={3}>
+          <img src={logo} alt="ReX" style={{ maxHeight: '7rem' }} />
+        </Box>
         <FormWrapper onSubmit={onSubmit}>
           <HeaderWrapper>
             <H1>Login</H1>

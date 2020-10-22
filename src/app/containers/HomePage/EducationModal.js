@@ -72,10 +72,9 @@ export default function EducationModal({ handleClose, open }) {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-            Did you know? Some common side effects for{' '}
-            <strong>Atorvastatin</strong> include heartburn, gas, and
-            forgetfulness. Click Learn More to see what other side effects can
-            occur.
+            Some common side effects for <strong>Atorvastatin</strong> include
+            heartburn, gas, and forgetfulness. Click Learn More to see what
+            other side effects can occur.
           </Typography>
 
           <Box

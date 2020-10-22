@@ -411,12 +411,8 @@ export default function SimpleTabs() {
             ReX Community
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia curae; Proin nec auctor eros.
-            Curabitur vitae egestas sem, ac lobortis lorem. Phasellus dapibus
-            elit vel dui tincidunt, scelerisque congue magna mattis. Suspendisse
-            et pretium urna. Etiam rhoncus, dui ut tempor tincidunt, odio purus
-            vehicula nulla, eu viverra dolor mauris eu lacus.
+            Give and get some help from trusted voices, including HCPs and
+            patients similar to you.
           </Typography>
         </Box>
 

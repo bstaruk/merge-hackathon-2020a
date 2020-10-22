@@ -28,43 +28,43 @@ const typeOptions = {
   neutral: [
     {
       id: 1,
-      label: 'Neutral Option 1',
+      label: 'I feel okay',
     },
     {
       id: 2,
-      label: 'Neutral Option 2',
+      label: 'I feel normal',
     },
     {
       id: 3,
-      label: 'Neutral Option 3',
+      label: 'Other',
     },
   ],
   good: [
     {
       id: 1,
-      label: 'Good Option 1',
+      label: 'I feel great',
     },
     {
       id: 2,
-      label: 'Good Option 2',
+      label: 'I feel fine',
     },
     {
       id: 3,
-      label: 'Good Option 3',
+      label: 'Other',
     },
   ],
   bad: [
     {
       id: 1,
-      label: 'Bad Option 1',
+      label: 'I feel side effects',
     },
     {
       id: 2,
-      label: 'Bad Option 2',
+      label: "I don't feel any different",
     },
     {
       id: 3,
-      label: 'Bad Option 3',
+      label: 'Other',
     },
   ],
 };

@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
@@ -453,6 +454,43 @@ export default function SimpleTabs() {
             </Box>
           </Box>
         )}
+
+        <Box mt={3}>
+          <Paper elevation={3}>
+            <Box p={3}>
+              <Typography variant="h6" component="h4" gutterBottom>
+                When to get medical advice
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                If you think that you or someone you are with may be having a
+                serious allergic reaction to a medicine, phone 999 and ask for
+                immediate medical help.
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                Contact your GP or pharmacist immediately if:
+              </Typography>
+              <ul>
+                <li>
+                  <Typography variant="body2" component="span">
+                    you think you have a side effect that is listed as severe in
+                    your medicine's patient information leaflet (PIL)
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body2" component="span">
+                    you have a side effect you think is serious
+                  </Typography>
+                </li>
+              </ul>
+              <Typography variant="body2" gutterBottom>
+                You don't need to see your GP with mild side effects, such as
+                nausea, if you feel you can manage these on your own. Your
+                pharmacist should also be able to tell you if the side effects
+                need further investigation by your GP.
+              </Typography>
+            </Box>
+          </Paper>
+        </Box>
       </TabPanel>
     </div>
   );

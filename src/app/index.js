@@ -14,7 +14,7 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { blue } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 
 import { GlobalStyle } from 'styles/global-styles';
 import primaryTheme from 'styles/theme/primary';
@@ -29,7 +29,10 @@ import { userSaga } from 'app/data/user/saga';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: blue[800],
+      main: green[700],
+    },
+    secondary: {
+      main: green[200],
     },
   },
 });

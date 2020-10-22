@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import { deepPurple } from '@material-ui/core/colors';
+import { blue } from '@material-ui/core/colors';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -94,8 +94,8 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     width: theme.spacing(7),
     height: theme.spacing(7),
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
+    color: theme.palette.getContrastText(blue[700]),
+    backgroundColor: blue[700],
   },
 }));
 

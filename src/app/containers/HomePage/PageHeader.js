@@ -47,7 +47,7 @@ function PageHeader() {
         ml={2}
       >
         <Typography variant="h6" component="h2">
-          Hi, {user.firstName} {user.lastName}!
+          {user.firstName} {user.lastName}
         </Typography>
         <Box
           display="flex"

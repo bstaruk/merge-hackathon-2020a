@@ -78,7 +78,7 @@ const medicineCards = [
           </li>
         </ul>
 
-        <Typography variant="h6" component="h5" gutterBottom>
+        <Typography variant="h6" component="h5" gutterBottom id="med-card-info">
           Additional Information:
         </Typography>
 

@@ -9,6 +9,9 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
+import MedImg1 from './assets/1.jpg';
+import MedImg2 from './assets/2.jpeg';
+import MedImg3 from './assets/3.jpeg';
 import CommunityCard from '../CommunityCard';
 import MedicineCard from '../MedicineCard';
 import { selectActiveTab, selectAdviceDismissed } from '../selectors';
@@ -21,6 +24,7 @@ const medicineCards = [
     dosage: '40MG, 1 tablet daily',
     category: 'Use before 12/1/21',
     tags: ['Tag A', 'Tag B', 'Tag C'],
+    image: MedImg1,
     content: (
       <Typography variant="body2" color="textSecondary">
         Atorvastatin is used along with a proper diet to help lower "bad"
@@ -100,6 +104,7 @@ const medicineCards = [
     dosage: '25MG, 1 tablet daily',
     category: 'Use before 10/7/21',
     tags: ['Tag A', 'Tag B', 'Tag C'],
+    image: MedImg2,
     content: (
       <Typography variant="body2" color="textSecondary">
         This medication is used to treat high blood pressure. Lowering high
@@ -182,6 +187,7 @@ const medicineCards = [
     dosage: '40MG, 1 tablet daily',
     category: 'Use before 10/7/21',
     tags: ['Tag A', 'Tag B', 'Tag C'],
+    image: MedImg3,
     content: (
       <Typography variant="body2" color="textSecondary">
         Quinapril is used to treat high blood pressure. Lowering high blood
@@ -355,6 +361,7 @@ export default function SimpleTabs() {
               title={card.title}
               dosage={card.dosage}
               category={card.category}
+              image={card.image}
               content={card.content}
               moreContent={card.moreContent}
               tags={card.tags}

@@ -41,9 +41,23 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(0.5),
     },
   },
+  image: {
+    maxWidth: theme.spacing(20),
+    float: 'right',
+    paddingLeft: theme.spacing(3),
+    paddingBottom: theme.spacing(1),
+  },
 }));
 
-function MedicineCard({ category, content, moreContent, dosage, tags, title }) {
+function MedicineCard({
+  category,
+  content,
+  image,
+  moreContent,
+  dosage,
+  tags,
+  title,
+}) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -69,6 +83,8 @@ function MedicineCard({ category, content, moreContent, dosage, tags, title }) {
         <Typography variant="h6" component="h2" gutterBottom>
           {title} ({dosage})
         </Typography>
+
+        {image && <img src={image} alt={title} className={classes.image} />}
 
         {content}
 
@@ -136,6 +152,7 @@ MedicineCard.propTypes = {
   moreContent: PropTypes.node.isRequired,
   dosage: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
+  image: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
 };
 

@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function MedicineCard({ category, dosage, tags, title }) {
+function MedicineCard({ category, content, dosage, tags, title }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -65,17 +65,13 @@ function MedicineCard({ category, dosage, tags, title }) {
     <Card variant="outlined">
       <CardContent>
         <Typography color="textSecondary">{category}</Typography>
+
         <Typography variant="h6" component="h2" gutterBottom>
           {title} ({dosage})
         </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Some basic content about the medicine or lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Fusce tincidunt diam vel turpis lobortis
-          rhoncus. Fusce in ante ac dui fringilla rhoncus. Nunc lacinia luctus
-          sem. Quisque luctus tempus lorem rutrum condimentum. Integer non risus
-          dapibus, pretium mauris vitae, finibus augue. Quisque pretium turpis
-          vitae enim feugiat dictum.
-        </Typography>
+
+        {content}
+
         <div className={classes.chipsWrapper}>
           {tags.map((tag, index) => (
             <Chip variant="outlined" size="small" label={tag} key={index} />
@@ -175,6 +171,7 @@ function MedicineCard({ category, dosage, tags, title }) {
 
 MedicineCard.propTypes = {
   category: PropTypes.string.isRequired,
+  content: PropTypes.node.isRequired,
   dosage: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,

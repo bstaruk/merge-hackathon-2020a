@@ -17,24 +17,56 @@ import { actions } from '../slice';
 const medicineCards = [
   {
     id: 1,
-    title: 'Lipsumestra',
-    dosage: '200mg',
-    category: 'Experimental Superpower Ointment',
-    tags: ['Twice-daily', 'Heart health', 'Take with meal'],
+    title: 'Atorvastatin',
+    dosage: '40MG, 1 tablet daily',
+    category: 'Use before 12/1/21',
+    tags: ['Tag A', 'Tag B', 'Tag C'],
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        Atorvastatin is used along with a proper diet to help lower "bad"
+        cholesterol and fats (such as LDL, triglycerides) and raise "good"
+        cholesterol (HDL) in the blood. It belongs to a group of drugs known as
+        "statins." It works by reducing the amount of cholesterol made by the
+        liver. Lowering "bad" cholesterol and triglycerides and raising "good"
+        cholesterol decreases the risk of heart disease and helps prevent
+        strokes and heart attacks.
+      </Typography>
+    ),
   },
   {
     id: 2,
-    title: 'Metamucil',
-    dosage: '600mg',
-    category: 'Dietary Aid',
-    tags: ['Once-daily', 'Gut health', 'Take before breakfast'],
+    title: 'Hydrochlorothiazide',
+    dosage: '25MG, 1 tablet daily',
+    category: 'Use before 10/7/21',
+    tags: ['Tag A', 'Tag B', 'Tag C'],
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        This medication is used to treat high blood pressure. Lowering high
+        blood pressure helps prevent strokes, heart attacks, and kidney
+        problems. Hydrochlorothiazide belongs to a class of drugs known as
+        diuretics/"water pills." It works by causing you to make more urine.
+        This helps your body get rid of extra salt and water.This medication
+        also reduces extra fluid in the body (edema) caused by conditions such
+        as heart failure, liver disease, or kidney disease. This can lessen
+        symptoms such as shortness of breath or swelling in your ankles or feet.
+      </Typography>
+    ),
   },
   {
     id: 3,
-    title: 'Yabbadabbin',
-    dosage: '40mg',
-    category: 'Stone Age Sleeping Aid',
-    tags: ['Take before bed'],
+    title: 'Quinapril',
+    dosage: '40MG, 1 tablet daily',
+    category: 'Use before 10/7/21',
+    tags: ['Tag A', 'Tag B', 'Tag C'],
+    content: (
+      <Typography variant="body2" color="textSecondary">
+        Quinapril is used to treat high blood pressure. Lowering high blood
+        pressure helps prevent strokes, heart attacks, and kidney problems. This
+        medication is also used to treat heart failure. Quinapril belongs to a
+        class of drugs known as ACE inhibitors. It works by relaxing blood
+        vessels so blood can flow more easily.
+      </Typography>
+    ),
   },
 ];
 
@@ -146,6 +178,7 @@ export default function SimpleTabs() {
               title={card.title}
               dosage={card.dosage}
               category={card.category}
+              content={card.content}
               tags={card.tags}
             />
           </Box>
